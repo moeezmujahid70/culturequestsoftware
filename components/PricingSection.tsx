@@ -6,20 +6,20 @@ const tiers = [
     featured: false,
   },
   {
-    employees: "51 – 100",
+    employees: "51-100",
     price: "$299",
     perMonth: "~$25/mo",
     featured: false,
   },
   {
-    employees: "101 – 250",
+    employees: "101-250",
     price: "$399",
     perMonth: "~$33/mo",
     featured: true,
     badge: "Most Popular",
   },
   {
-    employees: "251 – 500",
+    employees: "251-500",
     price: "$599",
     perMonth: "~$50/mo",
     featured: false,
@@ -36,7 +36,7 @@ const tiers = [
 
 const included = [
   "Unlimited teams within your organization",
-  "All five COS pillars — fully documented",
+  "All five COS pillars, fully documented",
   "Annual culture plan for every team",
   "Bi-annual review & update process",
   "No consultants or special expertise needed",
@@ -67,7 +67,7 @@ export default function PricingSection() {
     <section id="pricing" className="bg-parchment px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="text-center">
           <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
             Pricing
@@ -81,7 +81,7 @@ export default function PricingSection() {
           </p>
         </div>
 
-        {/* ── Trust signals ── */}
+        {/* Trust signals */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
           {[
             "Unlimited teams included",
@@ -109,11 +109,11 @@ export default function PricingSection() {
           ))}
         </div>
 
-        {/* ── Pricing cards ── */}
+        {/* Pricing cards */}
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5" data-animate-children>
           {tiers.map((tier) =>
             tier.featured ? (
-              /* Featured card — crimson / Most Popular */
+              /* Featured card, crimson / Most Popular */
               <div
                 key={tier.employees}
                 className="relative flex flex-col rounded-2xl bg-crimson px-6 py-8 shadow-xl shadow-crimson/20 lg:-my-4 lg:py-12"
@@ -139,7 +139,7 @@ export default function PricingSection() {
                 </a>
               </div>
             ) : tier.highlight ? (
-              /* Highlighted card — gold-tinted / Best Value */
+              /* Highlighted card, gold-tinted / Best Value */
               <div
                 key={tier.employees}
                 className="relative flex flex-col rounded-2xl border-2 border-gold/50 bg-gradient-to-b from-amber-50 to-yellow-50 px-6 py-8 shadow-md shadow-gold/20 transition-shadow duration-200 hover:shadow-lg hover:shadow-gold/25"
@@ -200,7 +200,7 @@ export default function PricingSection() {
           )}
         </div>
 
-        {/* ── All plans include ── */}
+        {/* All plans include */}
         <div className="mx-auto mt-16 max-w-3xl rounded-2xl border border-mist bg-white px-8 py-10 shadow-sm">
           <p className="font-display text-xl font-semibold text-crimson">
             Every plan includes
@@ -217,9 +217,9 @@ export default function PricingSection() {
           </ul>
         </div>
 
-        {/* ── Footer note ── */}
+        {/* Footer note */}
         <p className="mt-8 text-center font-body text-sm text-charcoal/50">
-          Pricing is based on total organization size — not number of teams or
+          Pricing is based on total organization size, not number of teams or
           users.{" "}
           <a
             href="mailto:jerry.wagner@culturesinaction.com"

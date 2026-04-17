@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section className="pt-16">
       <style>{`
-        /* ── Draw-in on load ── */
+        /* Draw-in on load */
         @keyframes drawPent {
           from { stroke-dashoffset: ${PENT_PERIMETER}; }
           to   { stroke-dashoffset: 0; }
@@ -28,7 +28,7 @@ export default function Hero() {
           100% { stroke-dashoffset: 0; }
         }
 
-        /* ── Center node ── */
+        /* Center node */
         @keyframes centerBreath {
           0%, 100% { transform: scale(1);    }
           50%       { transform: scale(1.1); }
@@ -38,7 +38,7 @@ export default function Hero() {
           100% { r: 56px; opacity: 0;   }
         }
 
-        /* ── Sequential vertex glow (${CYCLE}s cycle) ── */
+        /* Sequential vertex glow (${CYCLE}s cycle) */
         /* Active window = first ${(ACTIVE / CYCLE * 100).toFixed(1)}% of cycle   */
         @keyframes nodeGlow {
           0%              { fill: #6B1414; filter: none; }
@@ -68,7 +68,7 @@ export default function Hero() {
       `}</style>
 
       <div className="grid min-h-[calc(100vh-4rem)] lg:grid-cols-2">
-        {/* ── Left — crimson panel ── */}
+        {/* Left, crimson panel */}
         <div className="flex flex-col justify-center bg-crimson px-8 py-20 lg:px-16 xl:px-24">
           <span className="mb-4 inline-block font-body text-xs font-medium uppercase tracking-widest text-gold">
             Culture Operating System
@@ -79,7 +79,7 @@ export default function Hero() {
           <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-white/75 lg:text-lg">
             Teams can intentionally design how they want their workplace to
             operate. A Culture Operating System (COS) gives you a clear, visible
-            blueprint — built from your team&apos;s own values and insights.
+            blueprint, built from your team&apos;s own values and insights.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
@@ -99,7 +99,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right — cream panel ── */}
+        {/* Right, cream panel */}
         <div className="cos-anim flex items-center justify-center bg-cream px-4 py-16 lg:px-8 lg:py-0">
           <svg
             viewBox="-60 -30 520 460"
@@ -110,7 +110,7 @@ export default function Hero() {
             aria-label="Culture Operating System diagram with five pillars: Decisions, Behaviors, Reinforcement, Ownership, and Improvement"
           >
             <defs>
-              {/* Spoke paths for animateMotion — center to each vertex */}
+              {/* Spoke paths for animateMotion, center to each vertex */}
               {nodes.map((n, i) => (
                 <path
                   key={i}
@@ -120,7 +120,7 @@ export default function Hero() {
               ))}
             </defs>
 
-            {/* ── Pentagon outline — draws in over 2s ── */}
+            {/* Pentagon outline, draws in over 2s */}
             <polygon
               points="200,60 333,157 282,313 118,313 67,157"
               stroke="#C4992A"
@@ -133,7 +133,7 @@ export default function Hero() {
               }}
             />
 
-            {/* ── Spoke lines — staggered draw-in ── */}
+            {/* Spoke lines, staggered draw-in */}
             {nodes.map((n, i) => (
               <line
                 key={i}
@@ -150,7 +150,7 @@ export default function Hero() {
               />
             ))}
 
-            {/* ── Traveling pulse dots along spokes ── */}
+            {/* Traveling pulse dots along spokes */}
             {nodes.map((_, i) => (
               <circle key={i} r="4" fill="#C4992A" opacity="0">
                 {/* Position: travels from center to vertex during active window */}
@@ -176,7 +176,7 @@ export default function Hero() {
               </circle>
             ))}
 
-            {/* ── Center COS node ── */}
+            {/* Center COS node */}
             <g>
               {/* Outer glow ring */}
               <circle
@@ -206,7 +206,7 @@ export default function Hero() {
               </text>
             </g>
 
-            {/* ── Vertex nodes (sequential glow) ── */}
+            {/* Vertex nodes, sequential glow */}
             {nodes.map((n, i) => {
               const delay = `${i * ACTIVE}s`;
               return (

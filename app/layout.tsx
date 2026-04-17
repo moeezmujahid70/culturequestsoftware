@@ -20,7 +20,7 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   title: "Culture Quest | Culture Operating System for Teams",
   description:
-    "Culture Quest gives your team a visible, human-led blueprint for how you work — covering decisions, behaviors, reinforcement, ownership, and improvement.",
+    "Culture Quest gives your team a visible, human-led blueprint for how you work, covering decisions, behaviors, reinforcement, ownership, and improvement.",
   metadataBase: new URL("https://culturequestsoftware.net"),
   openGraph: {
     title: "Culture Quest | Culture Operating System",

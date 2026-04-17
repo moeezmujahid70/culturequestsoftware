@@ -13,7 +13,7 @@ export default function ConceptSection() {
         <p className="mt-8 font-body text-base leading-relaxed text-charcoal lg:text-lg" data-animate data-delay="150">
           Using the Culture Quest COS engine, a team defines the blueprint for
           their environment. It draws from the values, judgment, experiences,
-          instincts, beliefs, and insights your team already has — not from
+          instincts, beliefs, and insights your team already has, not from
           surveys or AI agents. The result is a practical, step-by-step system
           any team can implement without special expertise.
         </p>

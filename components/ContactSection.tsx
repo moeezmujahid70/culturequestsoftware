@@ -126,7 +126,7 @@ export default function ContactSection() {
     <section id="contact" className="bg-parchment px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
-          {/* Left — copy */}
+          {/* Left, copy */}
           <div>
             <p className="font-body text-xs tracking-widest uppercase text-gold">
               Contact
@@ -137,7 +137,7 @@ export default function ContactSection() {
             <p className="mt-6 font-body text-base leading-relaxed text-charcoal">
               Whether you&apos;re exploring Culture Quest for your team,
               interested in a free pilot, or want to learn more about the
-              partnership program — we&apos;d love to hear from you.
+              partnership program, we&apos;d love to hear from you.
             </p>
 
             {/* Contact details */}
@@ -217,7 +217,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right — form */}
+          {/* Right, form */}
           <div className="rounded-2xl bg-white p-8 shadow-md shadow-crimson/5 lg:p-10">
             {submitted ? (
               <div className="flex flex-col items-center py-12 text-center">

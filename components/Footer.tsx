@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-crimson px-6 py-16">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-2">
-          {/* Left — brand */}
+          {/* Left, brand */}
           <div>
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5 shadow-sm">
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right — contact */}
+          {/* Right, contact */}
           <div className="md:text-right">
             <p className="font-display text-lg font-semibold text-white">
               Gerald (Jerry) Wagner, PhD

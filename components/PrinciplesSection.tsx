@@ -12,7 +12,7 @@ const principles = [
   },
   {
     title: "Build Culture at the Team Level",
-    body: "Company-wide culture initiatives often fail because they are too abstract. Real culture lives in teams — in daily interactions, decisions, and behaviors. Culture Quest builds from the ground up, giving each team ownership of their own culture plan.",
+    body: "Company-wide culture initiatives often fail because they are too abstract. Real culture lives in teams, in daily interactions, decisions, and behaviors. Culture Quest builds from the ground up, giving each team ownership of their own culture plan.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -33,7 +33,7 @@ const principles = [
   },
   {
     title: "Make it Visible and Documented",
-    body: "A culture that exists only in people's heads is fragile. Culture Quest produces a documented Team Culture Plan — available online and in print — so every team member has a current copy and can hold each other accountable.",
+    body: "A culture that exists only in people's heads is fragile. Culture Quest produces a documented Team Culture Plan, available online and in print, so every team member has a current copy and can hold each other accountable.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -62,7 +62,7 @@ export default function PrinciplesSection() {
     <section className="bg-parchment px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
 
-        {/* ── Section header — editorial two-column split ── */}
+        {/* Section header, editorial two-column split */}
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:items-end" data-animate>
           <div>
             <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
@@ -79,16 +79,16 @@ export default function PrinciplesSection() {
           </p>
         </div>
 
-        {/* ── Gold rule ── */}
+        {/* Gold rule */}
         <div className="mt-12 h-px bg-gold/30" />
 
-        {/* ── Principles ── */}
+        {/* Principles */}
         <div>
           {principles.map((p, i) => (
             <div key={p.title} data-animate>
               <div className="group grid gap-8 py-12 lg:grid-cols-[1fr_1.6fr] lg:gap-16 lg:py-14">
 
-                {/* Left — number + icon + title */}
+                {/* Left, number + icon + title */}
                 <div className="relative">
                   {/* Decorative oversized number */}
                   <span
@@ -115,7 +115,7 @@ export default function PrinciplesSection() {
                   </h3>
                 </div>
 
-                {/* Right — body */}
+                {/* Right, body */}
                 <div className="flex flex-col justify-center">
                   {/* Pull-quote bar */}
                   <div className="mb-6 h-px w-12 bg-gold/40 transition-all duration-300 group-hover:w-24 group-hover:bg-gold" />
@@ -133,7 +133,7 @@ export default function PrinciplesSection() {
           ))}
         </div>
 
-        {/* ── Bottom rule ── */}
+        {/* Bottom rule */}
         <div className="mt-2 h-px bg-gold/30" />
       </div>
     </section>

@@ -9,7 +9,7 @@ export default function CQLogo({ size = 40 }: { size?: number }) {
       aria-label="Culture Quest logo"
       role="img"
     >
-      {/* C letterform — crimson */}
+      {/* C letterform, crimson */}
       <path
         d="M38 20C24 20 14 34 14 50C14 66 24 80 38 80C46 80 52 76 56 70"
         stroke="#6B1414"
@@ -17,7 +17,7 @@ export default function CQLogo({ size = 40 }: { size?: number }) {
         strokeLinecap="round"
         fill="none"
       />
-      {/* Q letterform — charcoal */}
+      {/* Q letterform, charcoal */}
       <circle
         cx="64"
         cy="50"
