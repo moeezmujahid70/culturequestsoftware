@@ -46,11 +46,16 @@ export default function WhySection() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-3">
+        <div className="mt-16 grid gap-12 md:grid-cols-3" data-animate-children>
           {reasons.map((r) => (
-            <div key={r.title} className="text-center md:text-left">
+            <div
+              key={r.title}
+              className="group rounded-xl p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md md:text-left"
+            >
               <div className="mb-4 flex justify-center md:justify-start">
-                {r.icon}
+                <div className="rounded-full bg-gold/10 p-3 transition-colors duration-200 group-hover:bg-gold/20">
+                  {r.icon}
+                </div>
               </div>
               <h3 className="font-display text-xl font-semibold text-crimson">
                 {r.title}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import AnimationObserver from "@/components/AnimationObserver";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${instrumentSans.variable}`}
     >
       <body className="font-body text-charcoal bg-cream antialiased">
+        <AnimationObserver />
         {children}
       </body>
     </html>

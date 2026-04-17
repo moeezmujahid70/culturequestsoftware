@@ -205,6 +205,16 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
+
+            {/* Cultures in Action logo */}
+            <div className="mt-14">
+              <img
+                src="/assets/brand/guidelines/co1.png"
+                alt="Cultures in Action"
+                className="w-full max-w-[300px]"
+                style={{ mixBlendMode: "multiply" }}
+              />
+            </div>
           </div>
 
           {/* Right — form */}

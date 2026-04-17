@@ -1,11 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import CQLogo from "./CQLogo";
 
 const navLinks = [
-  { label: "Vision", href: "#vision" },
-  { label: "Principles", href: "#principles" },
   { label: "Live Demo", href: "https://www.teamculturesystem.com" },
   { label: "Pricing", href: "#pricing" },
   { label: "Partners", href: "#partners" },
@@ -30,8 +27,16 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         {/* Logo + wordmark */}
-        <a href="#" className="flex items-center gap-2">
-          <CQLogo size={36} />
+        <a href="#" className="flex items-center gap-2.5">
+          <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1 shadow-sm">
+            <img
+              src="/cq-logo.jpg"
+              alt="Culture Quest logo"
+              width={28}
+              height={28}
+              className="h-7 w-7 object-contain"
+            />
+          </span>
           <span className="font-display text-lg font-semibold text-white">
             Culture Quest
           </span>

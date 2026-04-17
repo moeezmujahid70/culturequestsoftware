@@ -35,16 +35,16 @@ export default function PillarsSection() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-animate-children>
           {pillars.map((pillar) => (
             <div
               key={pillar.name}
-              className="group cursor-pointer rounded-lg border-t-2 border-gold bg-white/[0.06] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-t-4 hover:bg-white/[0.1]"
+              className="group cursor-pointer rounded-lg border-t-2 border-gold bg-white/[0.06] p-6 transition-all duration-200 hover:-translate-y-2 hover:border-t-4 hover:bg-white/[0.12] hover:shadow-lg hover:shadow-black/20"
             >
-              <h3 className="font-display text-xl font-semibold text-gold">
+              <h3 className="font-display text-xl font-semibold text-gold transition-colors duration-200 group-hover:text-yellow-300">
                 {pillar.name}
               </h3>
-              <p className="mt-3 font-body text-sm leading-relaxed text-white/75">
+              <p className="mt-3 font-body text-sm leading-relaxed text-white/75 transition-colors duration-200 group-hover:text-white/90">
                 {pillar.description}
               </p>
             </div>

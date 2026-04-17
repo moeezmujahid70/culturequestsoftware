@@ -1,5 +1,3 @@
-import CQLogo from "./CQLogo";
-
 export default function Footer() {
   return (
     <footer className="bg-crimson px-6 py-16">
@@ -8,7 +6,15 @@ export default function Footer() {
           {/* Left — brand */}
           <div>
             <div className="flex items-center gap-3">
-              <CQLogo size={44} />
+              <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5 shadow-sm">
+                <img
+                  src="/cq-logo.jpg"
+                  alt="Culture Quest logo"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
+                />
+              </span>
               <div>
                 <p className="font-display text-xl font-semibold text-white">
                   Culture Quest

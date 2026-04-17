@@ -1,7 +1,7 @@
 export default function PartnersSection() {
   return (
     <section id="partners" className="bg-crimson px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto max-w-2xl text-center" data-animate>
         <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
           Associates &amp; Partners
         </span>
@@ -15,7 +15,7 @@ export default function PartnersSection() {
         </p>
         <a
           href="mailto:jerry.wagner@culturesinaction.com"
-          className="mt-8 inline-block cursor-pointer font-body text-base font-medium text-gold underline underline-offset-4 transition-colors duration-200 hover:text-yellow-400"
+          className="link-underline mt-8 inline-block cursor-pointer font-body text-base font-medium text-gold transition-colors duration-200 hover:text-yellow-300"
         >
           Get in touch to learn more
         </a>

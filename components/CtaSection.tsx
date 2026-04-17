@@ -30,11 +30,11 @@ export default function CtaSection() {
           Ready to Get Started?
         </h2>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-16 grid gap-8 md:grid-cols-3" data-animate-children>
           {cards.map((card) => (
             <div
               key={card.title}
-              className="rounded-xl bg-white p-8 shadow-md"
+              className="group rounded-xl bg-white p-8 shadow-md transition-all duration-200 hover:-translate-y-2 hover:shadow-xl"
             >
               <h3 className="font-display text-xl font-semibold text-crimson">
                 {card.title}
@@ -47,9 +47,17 @@ export default function CtaSection() {
                 {...(card.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="mt-6 inline-block cursor-pointer rounded-full bg-crimson px-6 py-2.5 font-body text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-crimson/90"
+                className="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full bg-crimson px-6 py-2.5 font-body text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-crimson/90 hover:gap-3"
               >
                 {card.action}
+                <svg
+                  width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2.5"
+                  strokeLinecap="round" strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </a>
             </div>
           ))}
