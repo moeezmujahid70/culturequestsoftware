@@ -24,17 +24,17 @@ const cards = [
 
 export default function CtaSection() {
   return (
-    <section className="bg-gold px-6 py-24 lg:py-32">
+    <section className="bg-gold px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center font-display text-3xl font-semibold text-crimson lg:text-5xl">
           Ready to Get Started?
         </h2>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3" data-animate-children>
+        <div className="mt-12 grid gap-4 sm:mt-16 sm:gap-6 md:grid-cols-3 md:gap-8" data-animate-children>
           {cards.map((card) => (
             <div
               key={card.title}
-              className="group rounded-xl bg-white p-8 shadow-md transition-all duration-200 hover:-translate-y-2 hover:shadow-xl"
+              className="group rounded-2xl bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-2 hover:shadow-xl sm:p-8"
             >
               <h3 className="font-display text-xl font-semibold text-crimson">
                 {card.title}
@@ -47,7 +47,7 @@ export default function CtaSection() {
                 {...(card.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-full bg-crimson px-6 py-2.5 font-body text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-crimson/90 hover:gap-3"
+                className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-crimson px-6 py-2.5 font-body text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-crimson/90 hover:gap-3 sm:w-auto"
               >
                 {card.action}
                 <svg

@@ -16,7 +16,7 @@ const SPOKE_LEN = 140;
 
 export default function Hero() {
   return (
-    <section className="pt-16">
+    <section className="pt-14 sm:pt-16">
       <style>{`
         /* Draw-in on load */
         @keyframes drawPent {
@@ -67,24 +67,24 @@ export default function Hero() {
         }
       `}</style>
 
-      <div className="grid min-h-[calc(100vh-4rem)] lg:grid-cols-2">
+      <div className="grid lg:min-h-[calc(100vh-4rem)] lg:grid-cols-2">
         {/* Left, crimson panel */}
-        <div className="flex flex-col justify-center bg-crimson px-8 py-20 lg:px-16 xl:px-24">
+        <div className="flex flex-col justify-center bg-crimson px-5 py-14 sm:px-8 sm:py-[4.5rem] lg:px-16 lg:py-20 xl:px-24">
           <span className="mb-4 inline-block font-body text-xs font-medium uppercase tracking-widest text-gold">
             Culture Operating System
           </span>
-          <h1 className="font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-7xl">
+          <h1 className="font-display text-[2.4rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-7xl">
             Your Team Deserves a Better Operating System
           </h1>
-          <p className="mt-6 max-w-xl font-body text-base leading-relaxed text-white/75 lg:text-lg">
+          <p className="mt-5 max-w-lg font-body text-[15px] leading-relaxed text-white/75 sm:mt-6 sm:text-base lg:text-lg">
             Teams can intentionally design how they want their workplace to
             operate. A Culture Operating System (COS) gives you a clear, visible
             blueprint, built from your team&apos;s own values and insights.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4">
             <a
               href="mailto:jerry.wagner@culturesinaction.com"
-              className="cursor-pointer rounded-full bg-gold px-8 py-3 font-body text-sm font-medium tracking-wide text-crimson transition-colors duration-200 hover:bg-yellow-500"
+              className="cursor-pointer rounded-full bg-gold px-8 py-3 text-center font-body text-sm font-medium tracking-wide text-crimson transition-colors duration-200 hover:bg-yellow-500"
             >
               Request a Demo
             </a>
@@ -92,7 +92,7 @@ export default function Hero() {
               href="https://www.teamculturesystem.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer rounded-full border-2 border-white px-8 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-white/10"
+              className="cursor-pointer rounded-full border-2 border-white px-8 py-3 text-center font-body text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-white/10"
             >
               See It in Action
             </a>
@@ -100,10 +100,10 @@ export default function Hero() {
         </div>
 
         {/* Right, cream panel */}
-        <div className="cos-anim flex items-center justify-center bg-cream px-4 py-16 lg:px-8 lg:py-0">
+        <div className="cos-anim flex items-center justify-center bg-cream px-3 py-10 sm:px-4 sm:py-14 lg:px-8 lg:py-0">
           <svg
             viewBox="-60 -30 520 460"
-            className="h-auto w-full max-w-[540px]"
+            className="h-auto w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[540px]"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             role="img"

@@ -24,7 +24,7 @@ const pillars = [
 
 export default function PillarsSection() {
   return (
-    <section id="principles" className="bg-crimson px-6 py-24 lg:py-32">
+    <section id="principles" className="bg-crimson px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
@@ -35,11 +35,11 @@ export default function PillarsSection() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5" data-animate-children>
+        <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-5" data-animate-children>
           {pillars.map((pillar) => (
             <div
               key={pillar.name}
-              className="group cursor-pointer rounded-lg border-t-2 border-gold bg-white/[0.06] p-6 transition-all duration-200 hover:-translate-y-2 hover:border-t-4 hover:bg-white/[0.12] hover:shadow-lg hover:shadow-black/20"
+              className="group cursor-pointer rounded-lg border-t-2 border-gold bg-white/[0.06] p-5 transition-all duration-200 hover:-translate-y-2 hover:border-t-4 hover:bg-white/[0.12] hover:shadow-lg hover:shadow-black/20 sm:p-6"
             >
               <h3 className="font-display text-xl font-semibold text-gold transition-colors duration-200 group-hover:text-yellow-300">
                 {pillar.name}

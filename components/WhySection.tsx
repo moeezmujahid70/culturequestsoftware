@@ -35,7 +35,7 @@ const reasons = [
 
 export default function WhySection() {
   return (
-    <section className="bg-cream px-6 py-24 lg:py-32">
+    <section className="bg-cream px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
@@ -46,13 +46,13 @@ export default function WhySection() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-3" data-animate-children>
+        <div className="mt-12 grid gap-5 sm:mt-16 sm:gap-8 md:grid-cols-3 md:gap-12" data-animate-children>
           {reasons.map((r) => (
             <div
               key={r.title}
-              className="group rounded-xl p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md md:text-left"
+              className="group rounded-2xl bg-white/45 p-5 text-left transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md sm:p-6"
             >
-              <div className="mb-4 flex justify-center md:justify-start">
+              <div className="mb-4 flex justify-start">
                 <div className="rounded-full bg-gold/10 p-3 transition-colors duration-200 group-hover:bg-gold/20">
                   {r.icon}
                 </div>

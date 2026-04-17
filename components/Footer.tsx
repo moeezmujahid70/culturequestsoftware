@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
-    <footer className="bg-crimson px-6 py-16">
+    <footer className="bg-crimson px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {/* Left, brand */}
-          <div>
-            <div className="flex items-center gap-3">
+          <div className="text-center md:text-left">
+            <div className="flex items-center justify-center gap-3 md:justify-start">
               <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5 shadow-sm">
                 <img
                   src="/cq-logo.jpg"
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
 
           {/* Right, contact */}
-          <div className="md:text-right">
+          <div className="text-center md:text-right">
             <p className="font-display text-lg font-semibold text-white">
               Gerald (Jerry) Wagner, PhD
             </p>

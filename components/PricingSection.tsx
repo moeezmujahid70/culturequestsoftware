@@ -64,7 +64,7 @@ function CheckIcon() {
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-parchment px-6 py-24 lg:py-32">
+    <section id="pricing" className="bg-parchment px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
@@ -82,13 +82,13 @@ export default function PricingSection() {
         </div>
 
         {/* Trust signals */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-6 lg:gap-10">
           {[
             "Unlimited teams included",
             "No setup fees",
             "All features, every plan",
           ].map((signal) => (
-            <div key={signal} className="flex items-center gap-2">
+            <div key={signal} className="flex w-full items-center justify-center gap-2 sm:w-auto">
               <svg
                 width="16"
                 height="16"
@@ -110,13 +110,16 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing cards */}
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5" data-animate-children>
+        <div
+          className="no-scrollbar -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 sm:mx-0 sm:mt-14 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5"
+          data-animate-children
+        >
           {tiers.map((tier) =>
             tier.featured ? (
               /* Featured card, crimson / Most Popular */
               <div
                 key={tier.employees}
-                className="relative flex flex-col rounded-2xl bg-crimson px-6 py-8 shadow-xl shadow-crimson/20 lg:-my-4 lg:py-12"
+                className="relative flex min-w-[260px] snap-start flex-col rounded-2xl bg-crimson px-5 py-7 shadow-xl shadow-crimson/20 sm:min-w-0 sm:px-6 sm:py-8 lg:-my-4 lg:py-12"
               >
                 <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 font-body text-xs font-semibold uppercase tracking-widest text-crimson shadow">
                   {tier.badge}
@@ -142,7 +145,7 @@ export default function PricingSection() {
               /* Highlighted card, gold-tinted / Best Value */
               <div
                 key={tier.employees}
-                className="relative flex flex-col rounded-2xl border-2 border-gold/50 bg-gradient-to-b from-amber-50 to-yellow-50 px-6 py-8 shadow-md shadow-gold/20 transition-shadow duration-200 hover:shadow-lg hover:shadow-gold/25"
+                className="relative flex min-w-[260px] snap-start flex-col rounded-2xl border-2 border-gold/50 bg-gradient-to-b from-amber-50 to-yellow-50 px-5 py-7 shadow-md shadow-gold/20 transition-shadow duration-200 hover:shadow-lg hover:shadow-gold/25 sm:min-w-0 sm:px-6 sm:py-8"
               >
                 {/* Bubble badge */}
                 <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 font-body text-xs font-semibold uppercase tracking-widest text-white shadow-sm">
@@ -176,7 +179,7 @@ export default function PricingSection() {
               /* Standard card */
               <div
                 key={tier.employees}
-                className="flex flex-col rounded-2xl border border-mist bg-white px-6 py-8 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+                className="flex min-w-[260px] snap-start flex-col rounded-2xl border border-mist bg-white px-5 py-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:min-w-0 sm:px-6 sm:py-8"
               >
                 <p className="font-body text-xs font-medium uppercase tracking-widest text-charcoal/50">
                   {tier.employees} employees
@@ -201,11 +204,11 @@ export default function PricingSection() {
         </div>
 
         {/* All plans include */}
-        <div className="mx-auto mt-16 max-w-3xl rounded-2xl border border-mist bg-white px-8 py-10 shadow-sm">
+        <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-mist bg-white px-5 py-8 shadow-sm sm:mt-16 sm:px-8 sm:py-10">
           <p className="font-display text-xl font-semibold text-crimson">
             Every plan includes
           </p>
-          <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+          <ul className="mt-5 grid gap-x-8 gap-y-3 sm:mt-6 sm:grid-cols-2">
             {included.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <CheckIcon />
@@ -218,7 +221,7 @@ export default function PricingSection() {
         </div>
 
         {/* Footer note */}
-        <p className="mt-8 text-center font-body text-sm text-charcoal/50">
+        <p className="mt-7 text-center font-body text-sm text-charcoal/50 sm:mt-8">
           Pricing is based on total organization size, not number of teams or
           users.{" "}
           <a

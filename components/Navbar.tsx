@@ -25,7 +25,7 @@ export default function Navbar() {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Logo + wordmark */}
         <a href="#" className="flex items-center gap-2.5">
           <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1 shadow-sm">
@@ -37,7 +37,7 @@ export default function Navbar() {
               className="h-7 w-7 object-contain"
             />
           </span>
-          <span className="font-display text-lg font-semibold text-white">
+          <span className="font-display text-base font-semibold text-white sm:text-lg">
             Culture Quest
           </span>
         </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="border-t border-white/10 bg-crimson px-6 pb-4 md:hidden">
+        <div className="border-t border-white/10 bg-crimson px-4 pb-5 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -122,7 +122,7 @@ export default function Navbar() {
           ))}
           <a
             href="mailto:jerry.wagner@culturesinaction.com"
-            className="mt-2 inline-block cursor-pointer rounded-full bg-gold px-5 py-2 font-body text-sm font-medium text-crimson"
+            className="mt-3 inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-gold px-5 py-2.5 font-body text-sm font-medium text-crimson"
           >
             DEMO
           </a>

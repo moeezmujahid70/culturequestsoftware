@@ -1,6 +1,6 @@
 export default function PartnersSection() {
   return (
-    <section id="partners" className="bg-crimson px-6 py-24 lg:py-32">
+    <section id="partners" className="bg-crimson px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-2xl text-center" data-animate>
         <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
           Associates &amp; Partners

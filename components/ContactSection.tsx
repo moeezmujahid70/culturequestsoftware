@@ -123,9 +123,9 @@ export default function ContactSection() {
   const inputError = "border-red-400 focus:border-red-400 focus:ring-red-200";
 
   return (
-    <section id="contact" className="bg-parchment px-6 py-24 lg:py-32">
+    <section id="contact" className="bg-parchment px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-16 lg:grid-cols-2 lg:items-start">
+        <div className="grid gap-12 sm:gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
           {/* Left, copy */}
           <div>
             <p className="font-body text-xs tracking-widest uppercase text-gold">
@@ -207,18 +207,18 @@ export default function ContactSection() {
             </div>
 
             {/* Cultures in Action logo */}
-            <div className="mt-14">
+            <div className="mt-12 sm:mt-14">
               <img
                 src="/assets/brand/guidelines/co1.png"
                 alt="Cultures in Action"
-                className="w-full max-w-[300px]"
+                className="w-full max-w-[240px] sm:max-w-[300px]"
                 style={{ mixBlendMode: "multiply" }}
               />
             </div>
           </div>
 
           {/* Right, form */}
-          <div className="rounded-2xl bg-white p-8 shadow-md shadow-crimson/5 lg:p-10">
+          <div className="rounded-2xl bg-white p-5 shadow-md shadow-crimson/5 sm:p-8 lg:p-10">
             {submitted ? (
               <div className="flex flex-col items-center py-12 text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
