@@ -76,6 +76,10 @@ export default function Hero() {
           <h1 className="font-display text-[2.4rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-7xl">
             Your Team Deserves a Better Operating System
           </h1>
+          <p className="mt-5 max-w-2xl font-display text-2xl font-semibold leading-tight text-gold sm:mt-6 sm:text-3xl lg:text-[2.4rem]">
+            Stop settling for the culture you inherited&mdash;design the one you
+            want.
+          </p>
           <p className="mt-5 max-w-lg font-body text-[15px] leading-relaxed text-white/75 sm:mt-6 sm:text-base lg:text-lg">
             Teams can intentionally design how they want their workplace to
             operate. A Culture Operating System (COS) gives you a clear, visible

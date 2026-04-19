@@ -11,9 +11,30 @@ export default function ConceptSection() {
           </h2>
         </div>
         <p
-          className="mx-auto mt-8 max-w-4xl font-body text-base leading-relaxed text-charcoal lg:text-lg"
+          className="mx-auto mt-8 max-w-4xl text-center font-body text-lg leading-relaxed text-charcoal lg:text-[1.35rem]"
           data-animate
           data-delay="150"
+        >
+          Culture Quest is leading the shift to Culture Operating Systems
+          (COS).
+        </p>
+        <div
+          className="mx-auto mt-8 max-w-4xl rounded-[2rem] border border-gold/20 bg-white/80 px-6 py-8 text-center shadow-sm sm:px-10"
+          data-animate
+          data-delay="200"
+        >
+          <p className="font-display text-2xl font-semibold leading-tight text-crimson sm:text-3xl lg:text-[2.5rem]">
+            A COS is like an operator&apos;s manual for teamwork.
+          </p>
+          <p className="mt-4 font-body text-base leading-relaxed text-charcoal lg:text-lg">
+            It tells everyone: here&apos;s how we decide, here&apos;s how we
+            behave, and here&apos;s how we improve.
+          </p>
+        </div>
+        <p
+          className="mx-auto mt-8 max-w-4xl font-body text-base leading-relaxed text-charcoal lg:text-lg"
+          data-animate
+          data-delay="300"
         >
           Using the Culture Quest COS engine, a team defines exactly how it
           wants its workplace to operate. It draws from the values, judgment,
