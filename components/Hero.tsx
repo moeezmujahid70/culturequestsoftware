@@ -1,72 +1,8 @@
-const CYCLE = 7.5; // full cycle duration in seconds
-const ACTIVE = 1.5; // each node is active for this long
-
-// Pentagon vertices (center 200,200, radius 140)
-const nodes = [
-  { cx: 200, cy: 60,  label: "Decisions",     labelDx: 0,    labelDy: -26 },
-  { cx: 333, cy: 157, label: "Behaviors",      labelDx: 46,   labelDy: -6  },
-  { cx: 282, cy: 313, label: "Reinforcement",  labelDx: 18,   labelDy: 30  },
-  { cx: 118, cy: 313, label: "Ownership",      labelDx: -18,  labelDy: 30  },
-  { cx: 67,  cy: 157, label: "Improvement",    labelDx: -46,  labelDy: -6  },
-];
-
-// Pentagon perimeter: 5 sides × 2×140×sin(36°) ≈ 823
-const PENT_PERIMETER = 823;
-const SPOKE_LEN = 140;
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="pt-14 sm:pt-16">
-      <style>{`
-        /* Draw-in on load */
-        @keyframes drawPent {
-          from { stroke-dashoffset: ${PENT_PERIMETER}; }
-          to   { stroke-dashoffset: 0; }
-        }
-        @keyframes drawSpoke {
-          0%   { stroke-dashoffset: ${SPOKE_LEN}; }
-          100% { stroke-dashoffset: 0; }
-        }
-
-        /* Center node */
-        @keyframes centerBreath {
-          0%, 100% { transform: scale(1);    }
-          50%       { transform: scale(1.1); }
-        }
-        @keyframes centerRing {
-          0%   { r: 32px; opacity: 0.3; }
-          100% { r: 56px; opacity: 0;   }
-        }
-
-        /* Sequential vertex glow (${CYCLE}s cycle) */
-        /* Active window = first ${(ACTIVE / CYCLE * 100).toFixed(1)}% of cycle   */
-        @keyframes nodeGlow {
-          0%              { fill: #6B1414; filter: none; }
-          8%              { fill: #C4992A; filter: drop-shadow(0 0 10px #C4992A99); }
-          ${(ACTIVE / CYCLE * 100).toFixed(1)}%  { fill: #C4992A; filter: drop-shadow(0 0 10px #C4992A99); }
-          ${(ACTIVE / CYCLE * 100 + 5).toFixed(1)}% { fill: #6B1414; filter: none; }
-          100%            { fill: #6B1414; filter: none; }
-        }
-        @keyframes labelGlow {
-          0%              { fill: #2C2C2C; font-weight: 500; }
-          8%              { fill: #C4992A; font-weight: 700; }
-          ${(ACTIVE / CYCLE * 100).toFixed(1)}%  { fill: #C4992A; font-weight: 700; }
-          ${(ACTIVE / CYCLE * 100 + 5).toFixed(1)}% { fill: #2C2C2C; font-weight: 500; }
-          100%            { fill: #2C2C2C; font-weight: 500; }
-        }
-        @keyframes ringPulse {
-          0%   { r: 20px; opacity: 0; }
-          8%   { opacity: 0.35; }
-          20%  { r: 34px; opacity: 0; }
-          100% { r: 34px; opacity: 0; }
-        }
-
-        /* Respect user motion preference */
-        @media (prefers-reduced-motion: reduce) {
-          .cos-anim * { animation: none !important; }
-        }
-      `}</style>
-
       <div className="grid lg:min-h-[calc(100vh-4rem)] lg:grid-cols-2">
         {/* Left, crimson panel */}
         <div className="flex flex-col justify-center bg-crimson px-5 py-14 sm:px-8 sm:py-[4.5rem] lg:px-16 lg:py-20 xl:px-24">
@@ -103,154 +39,25 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right, cream panel */}
-        <div className="cos-anim flex items-center justify-center bg-cream px-3 py-10 sm:px-4 sm:py-14 lg:px-8 lg:py-0">
-          <svg
-            viewBox="-60 -30 520 460"
-            className="h-auto w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[540px]"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Culture Operating System diagram with five pillars: Decisions, Behaviors, Reinforcement, Ownership, and Improvement"
-          >
-            <defs>
-              {/* Spoke paths for animateMotion, center to each vertex */}
-              {nodes.map((n, i) => (
-                <path
-                  key={i}
-                  id={`spoke-path-${i}`}
-                  d={`M 200 200 L ${n.cx} ${n.cy}`}
-                />
-              ))}
-            </defs>
+        {/* Right, softened team photo */}
+        <div className="relative min-h-[320px] overflow-hidden bg-cream sm:min-h-[420px] lg:min-h-full">
+          <Image
+            src="/assets/images/hero.jpg"
+            alt="A team gathered together in discussion"
+            fill
+            unoptimized
+            priority
+            className="scale-[1.03] object-cover object-center opacity-80 saturate-[0.84] sepia-[0.05]"
+          />
 
-            {/* Pentagon outline, draws in over 2s */}
-            <polygon
-              points="200,60 333,157 282,313 118,313 67,157"
-              stroke="#C4992A"
-              strokeWidth="2.5"
-              fill="none"
-              strokeDasharray={PENT_PERIMETER}
-              style={{
-                animation: `drawPent 2s ease-out forwards`,
-                strokeDashoffset: PENT_PERIMETER,
-              }}
-            />
+          {/* Soften the image so it sits behind the message instead of shouting */}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,242,231,0.88)_0%,rgba(247,242,231,0.66)_22%,rgba(247,242,231,0.38)_48%,rgba(247,242,231,0.56)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_30%,rgba(255,255,255,0.18),transparent_42%)]" />
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-crimson/12 to-transparent lg:w-24" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-cream via-cream/60 to-transparent sm:h-32" />
 
-            {/* Spoke lines, staggered draw-in */}
-            {nodes.map((n, i) => (
-              <line
-                key={i}
-                x1="200" y1="200"
-                x2={n.cx} y2={n.cy}
-                stroke="#C4992A"
-                strokeWidth="1.5"
-                strokeDasharray={SPOKE_LEN}
-                opacity="0.55"
-                style={{
-                  animation: `drawSpoke 1.5s ${0.8 + i * 0.15}s ease-out forwards`,
-                  strokeDashoffset: SPOKE_LEN,
-                }}
-              />
-            ))}
-
-            {/* Traveling pulse dots along spokes */}
-            {nodes.map((_, i) => (
-              <circle key={i} r="4" fill="#C4992A" opacity="0">
-                {/* Position: travels from center to vertex during active window */}
-                <animateMotion
-                  dur={`${CYCLE}s`}
-                  begin={`${i * ACTIVE}s`}
-                  repeatCount="indefinite"
-                  keyPoints="0; 1; 1; 0"
-                  keyTimes={`0; ${(ACTIVE / CYCLE - 0.001).toFixed(4)}; ${(ACTIVE / CYCLE).toFixed(4)}; 1`}
-                  calcMode="linear"
-                >
-                  <mpath href={`#spoke-path-${i}`} />
-                </animateMotion>
-                {/* Opacity: fade in/out during travel */}
-                <animate
-                  attributeName="opacity"
-                  dur={`${CYCLE}s`}
-                  begin={`${i * ACTIVE}s`}
-                  repeatCount="indefinite"
-                  values="0; 0; 1; 1; 0; 0"
-                  keyTimes={`0; 0.01; 0.04; ${(ACTIVE / CYCLE - 0.04).toFixed(4)}; ${(ACTIVE / CYCLE).toFixed(4)}; 1`}
-                />
-              </circle>
-            ))}
-
-            {/* Center COS node */}
-            <g>
-              {/* Outer glow ring */}
-              <circle
-                cx="200" cy="200" r="32"
-                fill="#C4992A"
-                style={{ animation: `centerRing 2.5s ease-out infinite` }}
-              />
-              {/* Main circle */}
-              <circle
-                cx="200" cy="200" r="30"
-                fill="#6B1414"
-                style={{
-                  animation: `centerBreath 3s ease-in-out infinite`,
-                  transformOrigin: "200px 200px",
-                }}
-              />
-              <text
-                x="200" y="205"
-                textAnchor="middle"
-                fill="white"
-                fontSize="16"
-                fontWeight="700"
-                fontFamily="Cormorant Garamond, serif"
-                letterSpacing="1"
-              >
-                COS
-              </text>
-            </g>
-
-            {/* Vertex nodes, sequential glow */}
-            {nodes.map((n, i) => {
-              const delay = `${i * ACTIVE}s`;
-              return (
-                <g key={n.label}>
-                  {/* Pulse ring on activation */}
-                  <circle
-                    cx={n.cx} cy={n.cy} r="18"
-                    fill="#C4992A"
-                    opacity="0"
-                    style={{
-                      animation: `ringPulse ${CYCLE}s ${delay} ease-out infinite`,
-                      transformOrigin: `${n.cx}px ${n.cy}px`,
-                    }}
-                  />
-                  {/* Main node */}
-                  <circle
-                    cx={n.cx} cy={n.cy} r="18"
-                    fill="#6B1414"
-                    style={{
-                      animation: `nodeGlow ${CYCLE}s ${delay} ease-in-out infinite`,
-                    }}
-                  />
-                  {/* Label */}
-                  <text
-                    x={n.cx + n.labelDx}
-                    y={n.cy + n.labelDy}
-                    textAnchor="middle"
-                    fontSize="13"
-                    fontFamily="Instrument Sans, sans-serif"
-                    style={{
-                      animation: `labelGlow ${CYCLE}s ${delay} ease-in-out infinite`,
-                      fill: "#2C2C2C",
-                    }}
-                  >
-                    {n.label}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
+          {/* Subtle framing accent */}
+          <div className="absolute inset-5 rounded-[2rem] border border-white/35 sm:inset-7 lg:inset-10" />
         </div>
       </div>
     </section>
