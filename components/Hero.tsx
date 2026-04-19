@@ -70,7 +70,7 @@ export default function Hero() {
       <div className="grid lg:min-h-[calc(100vh-4rem)] lg:grid-cols-2">
         {/* Left, crimson panel */}
         <div className="flex flex-col justify-center bg-crimson px-5 py-14 sm:px-8 sm:py-[4.5rem] lg:px-16 lg:py-20 xl:px-24">
-          <span className="mb-4 inline-block font-body text-xs font-medium uppercase tracking-widest text-gold">
+          <span className="section-kicker section-kicker--inverse mb-5">
             Culture Operating System
           </span>
           <h1 className="font-display text-[2.4rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-7xl">

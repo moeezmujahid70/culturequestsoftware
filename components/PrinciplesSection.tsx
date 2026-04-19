@@ -64,11 +64,11 @@ export default function PrinciplesSection() {
 
         {/* Section header, editorial two-column split */}
         <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:items-end" data-animate>
-          <div>
-            <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
+          <div className="text-center lg:text-left">
+            <span className="section-kicker lg:mx-0">
               Principles
             </span>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-crimson lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl font-semibold leading-tight text-crimson lg:text-5xl">
               Culture Building Principles Within Culture Quest
             </h2>
           </div>

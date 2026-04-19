@@ -27,10 +27,10 @@ export default function PillarsSection() {
     <section id="principles" className="bg-crimson px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
+          <span className="section-kicker section-kicker--inverse">
             The Five Pillars
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-white lg:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-semibold text-white lg:text-5xl">
             Everything Your Culture Needs, in One System
           </h2>
         </div>

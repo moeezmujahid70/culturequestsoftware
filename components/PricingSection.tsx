@@ -69,10 +69,10 @@ export default function PricingSection() {
 
         {/* Header */}
         <div className="text-center">
-          <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
+          <span className="section-kicker">
             Pricing
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-crimson lg:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-semibold text-crimson lg:text-5xl">
             Simple, Transparent Pricing
           </h2>
           <p className="mx-auto mt-4 max-w-xl font-body text-base leading-relaxed text-charcoal">

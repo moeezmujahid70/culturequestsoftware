@@ -25,12 +25,11 @@ export default function VisionSection() {
   return (
     <section id="vision" className="bg-cream px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[800px]">
-
-        <div data-animate>
-          <span className="font-body text-xs font-medium uppercase tracking-widest text-gold">
+        <div className="text-center" data-animate>
+          <span className="section-kicker">
             Vision
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-crimson lg:text-5xl">
+          <h2 className="mx-auto mt-5 max-w-4xl font-display text-3xl font-semibold text-crimson lg:text-5xl">
             Culture Plans Should Hold the Same Strategic Stature as Business Plans
           </h2>
         </div>
