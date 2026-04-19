@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
             <a
               href="mailto:jerry.wagner@culturesinaction.com"
-              className="mt-4 inline-block cursor-pointer font-body text-sm font-medium text-gold transition-colors duration-200 hover:text-yellow-400"
+              className="mt-4 inline-block break-all cursor-pointer font-body text-sm font-medium text-gold transition-colors duration-200 hover:text-yellow-400"
             >
               jerry.wagner@culturesinaction.com
             </a>

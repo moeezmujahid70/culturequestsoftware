@@ -30,24 +30,24 @@ export default function Navbar() {
         {/* Logo + wordmark */}
         <a
           href="#"
-          className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-2.5 py-2 shadow-[0_12px_30px_rgba(0,0,0,0.16)] transition-colors duration-200 hover:bg-white/10"
+          className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.16)] transition-colors duration-200 hover:bg-white/10 sm:gap-3 sm:px-2.5 sm:py-2"
         >
-          <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-md ring-1 ring-black/5 sm:h-12 sm:w-12">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-md ring-1 ring-black/5 sm:h-12 sm:w-12">
             <Image
               src="/cq-logo.jpg"
               alt="Culture Quest logo"
               width={34}
               height={34}
-              className="h-8 w-8 object-contain sm:h-[2.15rem] sm:w-[2.15rem]"
+              className="h-7 w-7 object-contain sm:h-[2.15rem] sm:w-[2.15rem]"
               unoptimized
               priority
             />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-semibold tracking-[0.02em] text-white sm:text-[1.35rem]">
+            <span className="font-display text-base font-semibold tracking-[0.02em] text-white sm:text-[1.35rem]">
               Culture Quest
             </span>
-            <span className="mt-1 font-body text-[0.68rem] font-medium uppercase tracking-[0.26em] text-white/55">
+            <span className="mt-1 font-body text-[0.62rem] font-medium uppercase tracking-[0.22em] text-white/55 sm:text-[0.68rem] sm:tracking-[0.26em]">
               Software
             </span>
           </span>
@@ -87,7 +87,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="cursor-pointer text-white md:hidden"
+          className="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors duration-200 hover:bg-white/10 md:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           <svg
@@ -117,7 +117,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="border-t border-white/10 bg-crimson px-4 pb-5 md:hidden">
+        <div className="border-t border-white/10 bg-crimson px-4 pb-5 pt-2 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -126,14 +126,14 @@ export default function Navbar() {
               {...(link.href.startsWith("http")
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="block cursor-pointer py-3 font-body text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="block cursor-pointer rounded-2xl px-3 py-3.5 font-body text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </a>
           ))}
           <a
             href="mailto:jerry.wagner@culturesinaction.com"
-            className="mt-3 inline-flex w-full cursor-pointer items-center justify-center rounded-full bg-gold px-5 py-2.5 font-body text-sm font-medium text-crimson"
+            className="mt-3 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-full bg-gold px-5 py-2.5 font-body text-sm font-medium text-crimson"
           >
             DEMO
           </a>

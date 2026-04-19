@@ -35,32 +35,30 @@ const reasons = [
 
 export default function WhySection() {
   return (
-    <section className="bg-cream px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
+    <section className="bg-cream px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <span className="section-kicker">
-            Why Culture Quest Works
-          </span>
-          <h2 className="mt-5 font-display text-3xl font-semibold text-crimson lg:text-5xl">
+          <span className="section-kicker">Why Culture Quest Works</span>
+          <h2 className="mt-5 font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
             Designed for How Teams Want To Work
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:mt-16 sm:gap-8 md:grid-cols-3 md:gap-12" data-animate-children>
+        <div className="mt-10 grid gap-5 sm:mt-16 sm:gap-8 md:grid-cols-3 md:gap-10" data-animate-children>
           {reasons.map((r) => (
             <div
               key={r.title}
-              className="group rounded-2xl bg-white/45 p-5 text-left transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md sm:p-6"
+              className="group rounded-2xl bg-white/60 p-5 text-left transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-md sm:p-6"
             >
               <div className="mb-4 flex justify-start">
                 <div className="rounded-full bg-gold/10 p-3 transition-colors duration-200 group-hover:bg-gold/20">
                   {r.icon}
                 </div>
               </div>
-              <h3 className="font-display text-xl font-semibold text-crimson">
+              <h3 className="font-display text-[1.4rem] font-semibold text-crimson sm:text-xl">
                 {r.title}
               </h3>
-              <p className="mt-3 font-body text-base leading-relaxed text-charcoal">
+              <p className="mt-3 font-body text-[15px] leading-relaxed text-charcoal sm:text-base">
                 {r.body}
               </p>
             </div>

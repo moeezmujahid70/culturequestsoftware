@@ -7,20 +7,18 @@ const agenda = [
 
 export default function KickoffSection() {
   return (
-    <section className="bg-white px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
+    <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.25fr] lg:gap-16">
           <div className="text-center lg:text-left" data-animate>
-            <span className="section-kicker lg:mx-0">
-              Live Kickoff Sessions
-            </span>
-            <h2 className="mt-5 font-display text-3xl font-semibold leading-tight text-crimson lg:text-5xl">
+            <span className="section-kicker lg:mx-0">Live Kickoff Sessions</span>
+            <h2 className="mt-5 font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
               Stop Talking About Culture and Start Engineering It
             </h2>
           </div>
 
           <div data-animate data-delay="100">
-            <p className="font-body text-base leading-relaxed text-charcoal lg:text-lg">
+            <p className="font-body text-[15px] leading-relaxed text-charcoal sm:text-base lg:text-lg">
               The biggest hurdle for most teams is the blank-page problem. Our
               live kickoff session is a real-time working session where we help
               your team move from ideas to a first Culture Operating Plan: a
@@ -28,7 +26,7 @@ export default function KickoffSection() {
               with one another, and continually improve.
             </p>
 
-            <div className="mt-8 rounded-3xl border border-gold/20 bg-parchment px-6 py-6 shadow-sm sm:px-8">
+            <div className="mt-8 rounded-3xl border border-gold/20 bg-parchment px-5 py-5 shadow-sm sm:px-8 sm:py-6">
               <p className="font-body text-xs font-semibold uppercase tracking-[0.24em] text-gold">
                 First Live Workshop Agenda
               </p>
@@ -40,7 +38,7 @@ export default function KickoffSection() {
                     className="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-4"
                   >
                     <span className="mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-gold" />
-                    <span className="font-body text-sm leading-relaxed text-charcoal">
+                    <span className="font-body text-[15px] leading-relaxed text-charcoal sm:text-sm">
                       {item}
                     </span>
                   </li>

@@ -24,12 +24,12 @@ const cards = [
 
 export default function CtaSection() {
   return (
-    <section className="bg-gold px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
+    <section className="bg-gold px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <p className="mx-auto max-w-4xl text-center font-display text-2xl font-semibold leading-tight text-crimson sm:text-3xl lg:text-4xl">
+        <p className="mx-auto max-w-4xl text-center font-display text-[1.9rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-4xl">
           Stop settling for the culture you inherited. Design the one you want.
         </p>
-        <h2 className="mt-5 text-center font-display text-3xl font-semibold text-crimson lg:text-5xl">
+        <h2 className="mt-5 text-center font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
           Ready to Get Started?
         </h2>
 
@@ -42,7 +42,7 @@ export default function CtaSection() {
               <h3 className="font-display text-xl font-semibold text-crimson">
                 {card.title}
               </h3>
-              <p className="mt-3 font-body text-base leading-relaxed text-charcoal">
+              <p className="mt-3 font-body text-[15px] leading-relaxed text-charcoal sm:text-base">
                 {card.body}
               </p>
               <a
@@ -50,7 +50,7 @@ export default function CtaSection() {
                 {...(card.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-crimson px-6 py-2.5 font-body text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-crimson/90 hover:gap-3 sm:w-auto"
+                className="mt-6 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-crimson px-6 py-2.5 font-body text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-crimson/90 hover:gap-3 sm:w-auto"
               >
                 {card.action}
                 <svg

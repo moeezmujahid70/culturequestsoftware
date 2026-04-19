@@ -78,16 +78,17 @@ body {
   align-items: center;
   justify-content: center;
   width: fit-content;
-  padding: 0.6rem 1rem;
+  max-width: 100%;
+  padding: 0.68rem 1.1rem;
   border: 1px solid rgba(196, 153, 42, 0.24);
   border-radius: 9999px;
   background: linear-gradient(180deg, rgba(196, 153, 42, 0.14), rgba(196, 153, 42, 0.06));
   box-shadow: 0 12px 28px rgba(107, 20, 20, 0.08);
   color: #b88712;
   font-family: var(--font-instrument-sans, sans-serif);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.19em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -97,6 +98,14 @@ body {
   background: rgba(255, 255, 255, 0.08);
   box-shadow: none;
   color: #f2cf75;
+}
+
+@media (min-width: 640px) {
+  .section-kicker {
+    padding: 0.78rem 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+  }
 }
 
 /* ── Respect reduced motion ─────────────────────────────── */

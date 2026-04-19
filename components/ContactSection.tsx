@@ -123,18 +123,18 @@ export default function ContactSection() {
   const inputError = "border-red-400 focus:border-red-400 focus:ring-red-200";
 
   return (
-    <section id="contact" className="bg-parchment px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
+    <section id="contact" className="bg-parchment px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 sm:gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
           {/* Left, copy */}
-          <div>
+          <div className="text-center lg:text-left">
             <p className="font-body text-xs tracking-widest uppercase text-gold">
               Contact
             </p>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-crimson lg:text-5xl">
+            <h2 className="mt-3 font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
               Let&apos;s Start a Conversation
             </h2>
-            <p className="mt-6 font-body text-base leading-relaxed text-charcoal">
+            <p className="mt-6 font-body text-[15px] leading-relaxed text-charcoal sm:text-base">
               Whether you&apos;re exploring Culture Quest for your team,
               interested in a free pilot, or want to learn more about the
               partnership program, we&apos;d love to hear from you.
@@ -143,7 +143,7 @@ export default function ContactSection() {
             {/* Contact details */}
             <div className="mt-10 space-y-5">
               {/* Email */}
-              <div className="flex items-start gap-4">
+              <div className="flex items-start justify-center gap-4 text-left lg:justify-start">
                 <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
                   <svg
                     width="18"
@@ -166,7 +166,7 @@ export default function ContactSection() {
                   </p>
                   <a
                     href="mailto:jerry.wagner@culturesinaction.com"
-                    className="cursor-pointer font-body text-sm font-medium text-crimson transition-colors duration-200 hover:text-gold"
+                    className="cursor-pointer break-all font-body text-sm font-medium text-crimson transition-colors duration-200 hover:text-gold"
                   >
                     jerry.wagner@culturesinaction.com
                   </a>
@@ -174,7 +174,7 @@ export default function ContactSection() {
               </div>
 
               {/* Name / credentials */}
-              <div className="flex items-start gap-4">
+              <div className="flex items-start justify-center gap-4 text-left lg:justify-start">
                 <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
                   <svg
                     width="18"
@@ -211,7 +211,7 @@ export default function ContactSection() {
               <img
                 src="/assets/brand/guidelines/co1.png"
                 alt="Cultures in Action"
-                className="w-full max-w-[240px] sm:max-w-[300px]"
+                className="mx-auto w-full max-w-[240px] sm:max-w-[300px] lg:mx-0"
                 style={{ mixBlendMode: "multiply" }}
               />
             </div>
