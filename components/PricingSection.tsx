@@ -2,45 +2,30 @@ const tiers = [
   {
     employees: "50 or fewer",
     price: "$199",
-    perMonth: "~$17/mo",
-    featured: false,
   },
   {
     employees: "51-100",
     price: "$299",
-    perMonth: "~$25/mo",
-    featured: false,
   },
   {
     employees: "101-250",
     price: "$399",
-    perMonth: "~$33/mo",
-    featured: true,
-    badge: "Most Popular",
   },
   {
     employees: "251-500",
     price: "$599",
-    perMonth: "~$50/mo",
-    featured: false,
-    highlight: true,
-    badge: "Best Value",
   },
   {
     employees: "501 or more",
     price: "$799",
-    perMonth: "~$67/mo",
-    featured: false,
   },
 ];
 
 const included = [
-  "Unlimited teams within your organization",
-  "All five COS pillars, fully documented",
-  "Annual culture plan for every team",
-  "Bi-annual review & update process",
-  "No consultants or special expertise needed",
-  "Online + printable team culture plan",
+  "Unlimited employees per team",
+  "Hosting on a commercial server",
+  "Online start up training",
+  "Online help",
 ];
 
 function CheckIcon() {
@@ -114,93 +99,30 @@ export default function PricingSection() {
           className="no-scrollbar -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 sm:mx-0 sm:mt-14 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-5"
           data-animate-children
         >
-          {tiers.map((tier) =>
-            tier.featured ? (
-              /* Featured card, crimson / Most Popular */
-              <div
-                key={tier.employees}
-                className="relative flex min-w-[260px] snap-start flex-col rounded-2xl bg-crimson px-5 py-7 shadow-xl shadow-crimson/20 sm:min-w-0 sm:px-6 sm:py-8 lg:-my-4 lg:py-12"
-              >
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 font-body text-xs font-semibold uppercase tracking-widest text-crimson shadow">
-                  {tier.badge}
-                </span>
-                <p className="font-body text-xs font-medium uppercase tracking-widest text-white/50">
-                  {tier.employees} employees
-                </p>
-                <p className="mt-4 font-display text-5xl font-semibold text-gold">
-                  {tier.price}
-                </p>
-                <p className="mt-1 font-body text-sm text-white/60">
-                  per year &middot; {tier.perMonth}
-                </p>
-                <div className="mt-1 h-px w-full bg-white/10" />
+          {tiers.map((tier) => (
+            <div
+              key={tier.employees}
+              className="flex min-w-[260px] snap-start flex-col rounded-2xl border border-mist bg-white px-5 py-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:min-w-0 sm:px-6 sm:py-8"
+            >
+              <p className="font-body text-xs font-medium uppercase tracking-widest text-charcoal/50">
+                {tier.employees} employees
+              </p>
+              <p className="mt-4 font-display text-4xl font-semibold text-crimson">
+                {tier.price}
+              </p>
+              <p className="mt-1 font-body text-sm text-charcoal/50">
+                per year
+              </p>
+              <div className="mt-auto pt-6">
                 <a
                   href="mailto:jerry.wagner@culturesinaction.com"
-                  className="mt-6 cursor-pointer rounded-full bg-gold px-5 py-2.5 text-center font-body text-sm font-semibold tracking-wide text-crimson transition-colors duration-200 hover:bg-yellow-400"
+                  className="block cursor-pointer rounded-full border-2 border-crimson px-5 py-2.5 text-center font-body text-sm font-semibold tracking-wide text-crimson transition-colors duration-200 hover:bg-crimson hover:text-white"
                 >
                   Get Started
                 </a>
               </div>
-            ) : tier.highlight ? (
-              /* Highlighted card, gold-tinted / Best Value */
-              <div
-                key={tier.employees}
-                className="relative flex min-w-[260px] snap-start flex-col rounded-2xl border-2 border-gold/50 bg-gradient-to-b from-amber-50 to-yellow-50 px-5 py-7 shadow-md shadow-gold/20 transition-shadow duration-200 hover:shadow-lg hover:shadow-gold/25 sm:min-w-0 sm:px-6 sm:py-8"
-              >
-                {/* Bubble badge */}
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1 font-body text-xs font-semibold uppercase tracking-widest text-white shadow-sm">
-                  {tier.badge}
-                </span>
-
-                {/* Decorative gold circle accent */}
-                <div className="absolute top-4 right-4 h-16 w-16 rounded-full bg-gold/10" />
-                <div className="absolute top-7 right-7 h-10 w-10 rounded-full bg-gold/15" />
-
-                <p className="relative font-body text-xs font-medium uppercase tracking-widest text-gold/70">
-                  {tier.employees} employees
-                </p>
-                <p className="relative mt-4 font-display text-4xl font-semibold text-amber-700">
-                  {tier.price}
-                </p>
-                <p className="relative mt-1 font-body text-sm text-amber-600/70">
-                  per year &middot; {tier.perMonth}
-                </p>
-
-                <div className="mt-auto pt-6">
-                  <a
-                    href="mailto:jerry.wagner@culturesinaction.com"
-                    className="block cursor-pointer rounded-full bg-gold px-5 py-2.5 text-center font-body text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-amber-600"
-                  >
-                    Get Started
-                  </a>
-                </div>
-              </div>
-            ) : (
-              /* Standard card */
-              <div
-                key={tier.employees}
-                className="flex min-w-[260px] snap-start flex-col rounded-2xl border border-mist bg-white px-5 py-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:min-w-0 sm:px-6 sm:py-8"
-              >
-                <p className="font-body text-xs font-medium uppercase tracking-widest text-charcoal/50">
-                  {tier.employees} employees
-                </p>
-                <p className="mt-4 font-display text-4xl font-semibold text-crimson">
-                  {tier.price}
-                </p>
-                <p className="mt-1 font-body text-sm text-charcoal/50">
-                  per year &middot; {tier.perMonth}
-                </p>
-                <div className="mt-auto pt-6">
-                  <a
-                    href="mailto:jerry.wagner@culturesinaction.com"
-                    className="block cursor-pointer rounded-full border-2 border-crimson px-5 py-2.5 text-center font-body text-sm font-semibold tracking-wide text-crimson transition-colors duration-200 hover:bg-crimson hover:text-white"
-                  >
-                    Get Started
-                  </a>
-                </div>
-              </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
 
         {/* All plans include */}

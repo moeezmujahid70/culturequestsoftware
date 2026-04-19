@@ -13,7 +13,7 @@ const reasons = [
   },
   {
     title: "Practical Design",
-    body: "The engine\u2019s self-guided structure helps you organize what already exists and add what is missing. No consultants required.",
+    body: "The engine\u2019s self-guided structure helps you organize what already exists and add what is missing.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#C4992A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
         <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
@@ -42,7 +42,7 @@ export default function WhySection() {
             Why Culture Quest Works
           </span>
           <h2 className="mt-5 font-display text-3xl font-semibold text-crimson lg:text-5xl">
-            Built for Real Teams, Not Ideal Ones
+            Designed for How Teams Want To Work
           </h2>
         </div>
 
