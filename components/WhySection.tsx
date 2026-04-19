@@ -1,7 +1,7 @@
 const reasons = [
   {
     title: "Human-Led",
-    body: "Draws from the values, judgment, experiences, instincts, beliefs, and insights your team already has \u2014 the real building blocks for culture. Not data from surveys or AI agents.",
+    body: "Draws from the values, judgment, experiences, instincts, beliefs, and insights your team already has, the real building blocks for culture. Not data from surveys or AI agents.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="#C4992A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />

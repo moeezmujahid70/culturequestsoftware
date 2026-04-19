@@ -77,7 +77,7 @@ export default function Hero() {
             Your Team Deserves a Better Operating System
           </h1>
           <p className="mt-5 max-w-2xl font-display text-2xl font-semibold leading-tight text-gold sm:mt-6 sm:text-3xl lg:text-[2.4rem]">
-            Stop settling for the culture you inherited&mdash;design the one you
+            Stop settling for the culture you inherited. Design the one you
             want.
           </p>
           <p className="mt-5 max-w-lg font-body text-[15px] leading-relaxed text-white/75 sm:mt-6 sm:text-base lg:text-lg">

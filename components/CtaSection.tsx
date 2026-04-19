@@ -15,7 +15,7 @@ const cards = [
   },
   {
     title: "Free Pilot",
-    body: "Pilot a real-world implementation together at no cost. Keep it if it works \u2014 no obligation.",
+    body: "Pilot a real-world implementation together at no cost. Keep it if it works, with no obligation.",
     action: "Start Free Pilot",
     href: "mailto:jerry.wagner@culturesinaction.com",
     external: false,
@@ -27,7 +27,7 @@ export default function CtaSection() {
     <section className="bg-gold px-4 py-16 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <p className="mx-auto max-w-4xl text-center font-display text-2xl font-semibold leading-tight text-crimson sm:text-3xl lg:text-4xl">
-          Stop settling for the culture you inherited&mdash;design the one you want.
+          Stop settling for the culture you inherited. Design the one you want.
         </p>
         <h2 className="mt-5 text-center font-display text-3xl font-semibold text-crimson lg:text-5xl">
           Ready to Get Started?

@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import CQLogo from "./CQLogo";
 
 const navLinks = [
   { label: "Live Demo", href: "https://www.teamculturesystem.com" },
@@ -33,7 +33,15 @@ export default function Navbar() {
           className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-2.5 py-2 shadow-[0_12px_30px_rgba(0,0,0,0.16)] transition-colors duration-200 hover:bg-white/10"
         >
           <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-md ring-1 ring-black/5 sm:h-12 sm:w-12">
-            <CQLogo size={34} />
+            <Image
+              src="/cq-logo.jpg"
+              alt="Culture Quest logo"
+              width={34}
+              height={34}
+              className="h-8 w-8 object-contain sm:h-[2.15rem] sm:w-[2.15rem]"
+              unoptimized
+              priority
+            />
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-semibold tracking-[0.02em] text-white sm:text-[1.35rem]">
