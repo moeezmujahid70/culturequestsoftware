@@ -52,12 +52,9 @@ export default function Hero() {
           <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-crimson/12 to-transparent lg:w-24" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-cream via-cream/60 to-transparent sm:h-32" />
 
-          {/* Subtle framing accent */}
-          <div className="absolute inset-4 rounded-[1.75rem] border border-white/35 sm:inset-7 sm:rounded-[2rem] lg:inset-10" />
-
           {/* Editorial quote overlay */}
-          <div className="absolute inset-x-4 bottom-5 sm:inset-x-8 sm:bottom-8 lg:bottom-10 lg:left-10 lg:right-auto lg:max-w-[27rem]">
-            <div className="rounded-[1.75rem] border border-white/55 bg-parchment/88 px-5 py-5 shadow-[0_18px_40px_rgba(107,20,20,0.08)] backdrop-blur-[2px] sm:rounded-[2rem] sm:px-7 sm:py-7">
+          <div className="absolute inset-x-4 top-5 sm:inset-x-8 sm:top-8 lg:left-10 lg:right-auto lg:top-10 lg:max-w-[25rem]">
+            <div className="rounded-[1.75rem] bg-parchment/88 px-4 py-4 shadow-[0_18px_40px_rgba(107,20,20,0.08)] backdrop-blur-[2px] sm:rounded-[2rem] sm:px-6 sm:py-6">
               <p className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-gold">
                 The Culture Shift
               </p>
