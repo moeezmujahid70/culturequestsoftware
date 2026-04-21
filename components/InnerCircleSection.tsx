@@ -7,17 +7,24 @@ export default function InnerCircleSection() {
             Private Invitations
           </span>
           <h2 className="mt-5 font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
-            Join the Inner Circle
+            COS Builder Sessions
           </h2>
           <p className="mx-auto mt-6 max-w-2xl font-body text-[15px] leading-relaxed text-charcoal sm:text-base lg:text-lg">
             We occasionally open a limited number of private live kickoff
-            sessions for early backers and serious participants. When we do, we
-            send direct invitations for candid Zoom conversations. No marketing
+            sessions for early backers and serious participants. No marketing
             fluff or generic newsletters, just occasional notes when a
             high-value session opens up.
           </p>
+          <div className="mx-auto mt-5 max-w-2xl space-y-3 text-left sm:text-center">
+            <p className="font-body text-[15px] font-semibold leading-relaxed text-crimson sm:text-base lg:text-lg">
+              Do a free pilot with your actual team for 3 months. We&apos;ll do it together.
+            </p>
+            <p className="font-body text-[15px] leading-relaxed text-charcoal sm:text-base lg:text-lg">
+              We send direct invitations for candid Zoom conversations.
+            </p>
+          </div>
           <a
-            href="mailto:jerry.wagner@culturesinaction.com?subject=Inner%20Circle%20Invite%20Request"
+            href="mailto:jerry.wagner@culturesinaction.com?subject=COS%20Builder%20Sessions%20Invite%20Request"
             className="mt-8 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-full bg-crimson px-7 py-3 font-body text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors duration-200 hover:bg-crimson/90 sm:w-auto"
           >
             Request an Invite

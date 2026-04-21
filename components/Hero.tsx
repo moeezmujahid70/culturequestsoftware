@@ -6,13 +6,13 @@ export default function Hero() {
       <div className="grid lg:min-h-[calc(100vh-4rem)] lg:grid-cols-2">
         {/* Left, crimson panel */}
         <div className="flex flex-col justify-center bg-crimson px-4 py-12 text-center sm:px-8 sm:py-[4.5rem] lg:px-16 lg:py-20 lg:text-left xl:px-24">
-          <span className="section-kicker section-kicker--inverse mb-5 mx-auto lg:mx-0">
-            Culture Operating System
-          </span>
-          <h1 className="mx-auto max-w-[10ch] font-display text-[2.65rem] font-semibold leading-[0.98] text-white sm:max-w-[12ch] sm:text-5xl lg:mx-0 lg:max-w-none lg:text-7xl">
+          <h1 className="mx-auto max-w-[10ch] font-display text-[2.85rem] font-semibold leading-[0.95] tracking-tight text-white sm:max-w-[12ch] sm:text-6xl lg:mx-0 lg:max-w-none lg:text-[5rem] xl:text-[5.5rem]">
             Your Team Deserves a Better Operating System
           </h1>
-          <p className="mx-auto mt-6 max-w-xl font-body text-[15px] leading-relaxed text-white/75 sm:text-base lg:mx-0 lg:text-lg">
+          <span className="section-kicker section-kicker--inverse mt-6 mb-0 mx-auto lg:mx-0">
+            Culture Operating System
+          </span>
+          <p className="mx-auto mt-5 max-w-xl font-body text-[15px] leading-relaxed text-white/75 sm:text-base lg:mx-0 lg:text-lg">
             Teams can intentionally design how they want their workplace to
             operate. A Culture Operating System (COS) gives you a clear, visible
             blueprint, built from your team&apos;s own values and insights.

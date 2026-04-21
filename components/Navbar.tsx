@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Live Demo", href: "https://www.teamculturesystem.com" },
+  { label: "Example", href: "https://www.teamculturesystem.com" },
   { label: "Pricing", href: "#pricing" },
   { label: "Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
