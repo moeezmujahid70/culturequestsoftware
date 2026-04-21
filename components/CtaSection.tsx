@@ -15,7 +15,7 @@ const cards = [
   },
   {
     title: "Free Pilot",
-    body: "Pilot a real-world implementation together at no cost. Keep it if it works, with no obligation.",
+    body: "Do a free pilot with your actual team for 3 months. We’ll do it together.",
     action: "Start Free Pilot",
     href: "mailto:jerry.wagner@culturesinaction.com",
     external: false,

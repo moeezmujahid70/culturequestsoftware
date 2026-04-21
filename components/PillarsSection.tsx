@@ -1,11 +1,11 @@
 const pillars = [
   {
     name: "Decisions",
-    description: "How the team chooses to make decisions.",
+    description: "How the team wants to make decisions (rules).",
   },
   {
     name: "Behaviors",
-    description: "How the team expects people to behave.",
+    description: "How the team expects people to behave (rules).",
   },
   {
     name: "Reinforcement",

@@ -1,6 +1,6 @@
 const agenda = [
   "Clarify how the team wants to make decisions.",
-  "Define expected behaviors and working norms.",
+  "Clarify how the team wants people to behave.",
   "Capture the first version of the Culture Operating Plan.",
   "Leave with a living digital manual your team can keep improving.",
 ];
