@@ -24,7 +24,7 @@ const pillars = [
 
 export default function PillarsSection() {
   return (
-    <section id="principles" className="bg-crimson px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="pillars" className="bg-crimson px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <span className="section-kicker section-kicker--inverse">

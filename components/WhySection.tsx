@@ -35,7 +35,7 @@ const reasons = [
 
 export default function WhySection() {
   return (
-    <section className="bg-cream px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="design" className="bg-cream px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <span className="section-kicker">Why Culture Quest Works</span>

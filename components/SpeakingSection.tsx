@@ -1,6 +1,6 @@
 export default function SpeakingSection() {
   return (
-    <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:py-28">
+    <section id="speaking" className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-6xl" data-animate>
         <div className="grid gap-10 rounded-[2rem] border border-gold/20 bg-parchment px-5 py-8 shadow-[0_18px_40px_rgba(107,20,20,0.06)] sm:px-10 sm:py-12 lg:grid-cols-[0.95fr_1.25fr] lg:gap-16">
           <div className="text-center lg:text-left">

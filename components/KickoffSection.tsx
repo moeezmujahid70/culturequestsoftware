@@ -7,7 +7,7 @@ const agenda = [
 
 export default function KickoffSection() {
   return (
-    <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="kickoff" className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.25fr] lg:gap-16">
           <div className="text-center lg:text-left" data-animate>

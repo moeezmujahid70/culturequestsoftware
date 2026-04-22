@@ -1,6 +1,6 @@
 export default function ConceptSection() {
   return (
-    <section className="bg-parchment px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="concept" className="bg-parchment px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="text-center" data-animate>
           <span className="section-kicker">The Core Concept</span>
