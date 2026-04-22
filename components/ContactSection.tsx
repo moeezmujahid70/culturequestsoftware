@@ -143,7 +143,7 @@ export default function ContactSection() {
             {/* Contact details */}
             <div className="mt-10 space-y-5">
               {/* Email */}
-              <div className="flex items-start justify-center gap-4 text-left lg:justify-start">
+              <div className="mx-auto flex w-full max-w-[22rem] items-start justify-start gap-4 text-left lg:mx-0 lg:max-w-none">
                 <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
                   <svg
                     width="18"
@@ -160,13 +160,13 @@ export default function ContactSection() {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="font-body text-xs font-medium uppercase tracking-widest text-charcoal/50">
                     Email
                   </p>
                   <a
                     href="mailto:jerry.wagner@culturesinaction.com"
-                    className="cursor-pointer break-all font-body text-sm font-medium text-crimson transition-colors duration-200 hover:text-gold"
+                    className="cursor-pointer break-words font-body text-[0.98rem] leading-relaxed text-crimson transition-colors duration-200 hover:text-gold sm:text-sm"
                   >
                     jerry.wagner@culturesinaction.com
                   </a>
@@ -174,7 +174,7 @@ export default function ContactSection() {
               </div>
 
               {/* Name / credentials */}
-              <div className="flex items-start justify-center gap-4 text-left lg:justify-start">
+              <div className="mx-auto flex w-full max-w-[22rem] items-start justify-start gap-4 text-left lg:mx-0 lg:max-w-none">
                 <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
                   <svg
                     width="18"
@@ -191,15 +191,15 @@ export default function ContactSection() {
                     <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
                   </svg>
                 </div>
-                <div>
-                  <p className="font-body text-sm font-medium text-charcoal">
+                <div className="min-w-0 flex-1">
+                  <p className="font-body text-[0.98rem] font-medium leading-snug text-charcoal sm:text-sm">
                     Gerald (Jerry) Wagner, PhD
                   </p>
-                  <p className="font-body text-xs text-charcoal/50">
+                  <p className="font-body text-[0.95rem] leading-relaxed text-charcoal/50 sm:text-xs">
                     Gallup Senior Scientist &middot; Employee Wellbeing
                     Institute
                   </p>
-                  <p className="font-body text-xs text-charcoal/50">
+                  <p className="font-body text-[0.95rem] leading-relaxed text-charcoal/50 sm:text-xs">
                     Professor &middot; Entrepreneur
                   </p>
                 </div>

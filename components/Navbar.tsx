@@ -32,13 +32,13 @@ export default function Navbar() {
         scrolled ? "shadow-[0_14px_34px_rgba(0,0,0,0.18)]" : ""
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 sm:py-3">
         {/* Logo + wordmark */}
         <a
           href="#"
-          className="flex flex-shrink-0 items-center gap-2 rounded-full border border-white/18 bg-white/8 px-2 py-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.14)] transition-colors duration-200 hover:bg-white/12 sm:gap-2.5 sm:px-2.5 sm:py-1.5"
+          className="flex max-w-[calc(100vw-5.5rem)] flex-shrink items-center gap-2 rounded-full border border-white/18 bg-white/8 px-2.5 py-1.5 shadow-[0_12px_30px_rgba(0,0,0,0.14)] transition-colors duration-200 hover:bg-white/12 sm:max-w-none sm:flex-shrink-0 sm:gap-3 sm:px-3 sm:py-2"
         >
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-md ring-1 ring-black/5 sm:h-11 sm:w-11">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white shadow-md ring-1 ring-black/5 sm:h-12 sm:w-12 sm:rounded-[1rem]">
             <Image
               src="/cq-logo.jpg"
               alt="Culture Quest logo"
@@ -49,11 +49,11 @@ export default function Navbar() {
               priority
             />
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-[0.96rem] font-semibold tracking-[0.01em] text-white sm:text-[1.1rem] xl:text-[1.18rem]">
+          <span className="min-w-0 flex flex-col leading-none">
+            <span className="truncate font-display text-[1rem] font-semibold tracking-[0.01em] text-white sm:text-[1.22rem] xl:text-[1.18rem]">
               Culture Quest
             </span>
-            <span className="mt-1 font-body text-[0.56rem] font-medium uppercase tracking-[0.18em] text-[#F8E8BE] sm:text-[0.6rem] sm:tracking-[0.22em]">
+            <span className="mt-1 truncate font-body text-[0.54rem] font-medium uppercase tracking-[0.16em] text-[#F8E8BE] sm:text-[0.62rem] sm:tracking-[0.22em]">
               Software
             </span>
           </span>
@@ -85,7 +85,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors duration-200 hover:bg-white/10 lg:hidden"
+          className="ml-3 inline-flex min-h-11 min-w-11 flex-shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors duration-200 hover:bg-white/10 lg:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           <svg
@@ -121,7 +121,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block cursor-pointer rounded-2xl px-3 py-3.5 font-body text-sm font-semibold uppercase tracking-[0.12em] text-[#F8E8BE] transition-colors hover:bg-white/5 hover:text-white"
+              className="block cursor-pointer rounded-2xl px-3 py-3.5 font-body text-[0.82rem] font-semibold uppercase tracking-[0.12em] text-[#F8E8BE] transition-colors hover:bg-white/5 hover:text-white"
             >
               {link.label}
             </a>
