@@ -1,8 +1,8 @@
 export default function PartnersSection() {
   return (
     <section id="partners" className="bg-crimson px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
-      <div className="mx-auto max-w-2xl text-center" data-animate>
-        <span className="section-kicker section-kicker--inverse">
+      <div className="mx-auto max-w-2xl text-left" data-animate>
+        <span className="section-kicker section-kicker--inverse lg:mx-0">
           Associates &amp; Partners
         </span>
         <h2 className="mt-5 font-display text-[2rem] font-semibold leading-tight text-white sm:text-3xl lg:text-5xl">

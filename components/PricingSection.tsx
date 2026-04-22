@@ -53,12 +53,12 @@ export default function PricingSection() {
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
-        <div className="text-center">
-          <span className="section-kicker">Pricing</span>
+        <div className="text-left">
+          <span className="section-kicker lg:mx-0">Pricing</span>
           <h2 className="mt-5 font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
             Simple, Transparent Pricing
           </h2>
-          <p className="mx-auto mt-4 max-w-xl font-body text-[15px] leading-relaxed text-charcoal sm:text-base">
+          <p className="mt-4 max-w-xl font-body text-[15px] leading-relaxed text-charcoal sm:text-base">
             One flat annual price based on total organization size. Unlimited
             teams, no hidden fees, no per-user charges.
           </p>
@@ -142,7 +142,7 @@ export default function PricingSection() {
         </div>
 
         {/* Footer note */}
-        <p className="mt-7 text-center font-body text-sm text-charcoal/50 sm:mt-8">
+        <p className="mt-7 max-w-3xl font-body text-sm leading-relaxed text-charcoal/50 sm:mt-8">
           Pricing is based on total organization size, not number of teams or
           users.{" "}
           <a

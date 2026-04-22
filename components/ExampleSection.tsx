@@ -26,14 +26,10 @@ export default function ExampleSection() {
                 </p>
               </div>
 
-              <div className="mt-8 sm:mt-12">
-                <div className="mx-auto max-w-3xl rounded-[1.4rem] border border-crimson/15 bg-parchment px-5 py-4 text-center shadow-sm sm:rounded-3xl sm:px-6 sm:py-5">
-                  <p className="font-body text-[15px] font-semibold leading-relaxed text-crimson sm:text-[1.05rem]">
-                    You can&apos;t mess up anything or get in trouble. Just
-                    mouse over and click as you would in any application.
-                  </p>
-                </div>
-              </div>
+              <p className="mt-8 text-center font-body text-[15px] leading-relaxed text-crimson sm:mt-12 sm:text-[1.05rem]">
+                You can&apos;t mess up anything or get in trouble. Just mouse
+                over and click as you would in any application.
+              </p>
 
               <div className="mt-6 flex justify-center sm:mt-8">
                 <a
