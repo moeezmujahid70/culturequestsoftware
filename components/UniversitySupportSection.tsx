@@ -35,11 +35,11 @@ export default function UniversitySupportSection() {
   return (
     <section
       id="universities"
-      className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:py-28"
+      className="bg-white px-4 py-12 sm:px-6 sm:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 rounded-[1.5rem] border border-gold/20 bg-cream px-4 py-6 shadow-[0_18px_40px_rgba(107,20,20,0.06)] sm:px-10 sm:py-12 lg:grid-cols-[0.92fr_1.18fr] lg:gap-16 lg:rounded-[2rem]">
-          <div className="text-center lg:text-left" data-animate>
+          <div className="text-left" data-animate>
             <span className="section-kicker lg:mx-0">University Partnerships</span>
             <h2 className="mt-4 font-display text-[1.8rem] font-semibold leading-tight text-crimson sm:mt-5 sm:text-3xl lg:text-5xl">
               University Support Program
@@ -88,7 +88,7 @@ export default function UniversitySupportSection() {
                       <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-crimson text-xs font-semibold text-white sm:h-9 sm:w-9 sm:text-sm">
                         {index + 1}
                       </span>
-                      <div className="space-y-1.5 sm:space-y-2">
+                      <div className="min-w-0 space-y-1.5 sm:space-y-2">
                         <h3 className="font-display text-[1.05rem] font-semibold text-crimson sm:text-xl">
                           {item.title}
                         </h3>

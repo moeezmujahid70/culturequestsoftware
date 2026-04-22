@@ -1,6 +1,6 @@
 export default function PartnersSection() {
   return (
-    <section id="partners" className="bg-crimson px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="partners" className="bg-crimson px-4 py-12 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-2xl text-left" data-animate>
         <span className="section-kicker section-kicker--inverse lg:mx-0">
           Associates &amp; Partners
@@ -16,7 +16,7 @@ export default function PartnersSection() {
         <a
           href="#contact"
           data-inquiry-context="partners"
-          className="link-underline mt-8 inline-block cursor-pointer font-body text-base font-medium text-gold transition-colors duration-200 hover:text-yellow-300"
+          className="link-underline mt-8 inline-flex min-h-11 w-full cursor-pointer items-center justify-start font-body text-base font-medium text-gold transition-colors duration-200 hover:text-yellow-300 sm:w-auto"
         >
           Get in touch to learn more
         </a>

@@ -49,7 +49,7 @@ function CheckIcon() {
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="bg-parchment px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="pricing" className="bg-parchment px-4 py-12 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
 
         {/* Header */}
@@ -65,13 +65,13 @@ export default function PricingSection() {
         </div>
 
         {/* Trust signals */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-6 lg:gap-10">
+        <div className="mt-8 flex flex-wrap items-start justify-start gap-3 sm:mt-10 sm:items-center sm:justify-center sm:gap-6 lg:gap-10">
           {[
             "Unlimited teams included",
             "No setup fees",
             "All features, every plan",
           ].map((signal) => (
-            <div key={signal} className="flex w-full items-center justify-center gap-2 sm:w-auto">
+            <div key={signal} className="flex w-full items-center justify-start gap-2 sm:w-auto sm:justify-center">
               <svg
                 width="16"
                 height="16"
@@ -100,7 +100,7 @@ export default function PricingSection() {
           {tiers.map((tier) => (
             <div
               key={tier.employees}
-              className="flex min-w-[248px] snap-start flex-col rounded-2xl border border-mist bg-white px-5 py-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:min-w-0 sm:px-6 sm:py-8"
+              className="flex min-w-[232px] snap-start flex-col rounded-2xl border border-mist bg-white px-4 py-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md sm:min-w-0 sm:px-6 sm:py-8"
             >
               <p className="font-body text-xs font-medium uppercase tracking-widest text-charcoal/50">
                 {tier.employees} employees
@@ -125,7 +125,7 @@ export default function PricingSection() {
         </div>
 
         {/* All plans include */}
-        <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-mist bg-white px-5 py-8 shadow-sm sm:mt-16 sm:px-8 sm:py-10">
+        <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-mist bg-white px-5 py-7 shadow-sm sm:mt-16 sm:px-8 sm:py-10">
           <p className="font-display text-xl font-semibold text-crimson">
             Every plan includes
           </p>

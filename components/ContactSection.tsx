@@ -414,9 +414,9 @@ export default function ContactSection() {
     "border-red-400 focus-visible:border-red-400 focus-visible:ring-red-200";
 
   return (
-    <section id="contact" className="bg-parchment px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="contact" className="bg-parchment px-4 py-12 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 sm:gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div className="grid gap-10 sm:gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
           {/* Left, copy */}
           <div className="text-center lg:text-left">
             <p className="font-body text-xs tracking-widest uppercase text-gold">
@@ -432,10 +432,10 @@ export default function ContactSection() {
             </p>
 
             {/* Contact details */}
-            <div className="mt-10 space-y-5">
+            <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
               {/* Email */}
-              <div className="mx-auto flex w-full max-w-[22rem] items-start justify-start gap-4 text-left lg:mx-0 lg:max-w-none">
-                <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
+              <div className="mx-auto flex w-full max-w-[22rem] items-start justify-start gap-3 text-left lg:mx-0 lg:max-w-none lg:gap-4">
+                <div className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
                   <svg
                     width="18"
                     height="18"
@@ -465,8 +465,8 @@ export default function ContactSection() {
               </div>
 
               {/* Name / credentials */}
-              <div className="mx-auto flex w-full max-w-[22rem] items-start justify-start gap-4 text-left lg:mx-0 lg:max-w-none">
-                <div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
+              <div className="mx-auto flex w-full max-w-[22rem] items-start justify-start gap-3 text-left lg:mx-0 lg:max-w-none lg:gap-4">
+                <div className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-crimson/10">
                   <svg
                     width="18"
                     height="18"
@@ -509,7 +509,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right, form */}
-          <div className="rounded-2xl bg-white p-5 shadow-md shadow-crimson/5 sm:p-8 lg:p-10">
+          <div className="rounded-2xl bg-white p-4 shadow-md shadow-crimson/5 sm:p-8 lg:p-10">
             {submitted ? (
               <div className="flex flex-col items-center py-12 text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/10">
@@ -554,8 +554,8 @@ export default function ContactSection() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                <h3 className="font-display text-xl font-semibold text-crimson">
+              <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
+                <h3 className="font-display text-[1.15rem] font-semibold text-crimson sm:text-xl">
                   {activeConfig.title}
                 </h3>
                 <p className="font-body text-sm leading-relaxed text-charcoal/70">
@@ -563,10 +563,10 @@ export default function ContactSection() {
                 </p>
 
                 <div>
-                  <label
-                    htmlFor="topic"
-                    className="mb-1.5 block font-body text-sm font-medium text-charcoal"
-                  >
+                    <label
+                      htmlFor="topic"
+                      className="mb-1.5 block font-body text-[0.92rem] font-medium text-charcoal sm:text-sm"
+                    >
                     Topic
                     <span className="ml-1 text-gold" aria-hidden="true">
                       *
@@ -626,7 +626,7 @@ export default function ContactSection() {
                   }
 
                   const renderSingleField = (currentField: typeof field) => (
-                    <div key={currentField.id}>
+                    <div key={currentField.id} className="min-w-0">
                       <label
                         htmlFor={currentField.id}
                         className="mb-1.5 block font-body text-sm font-medium text-charcoal"
@@ -699,7 +699,7 @@ export default function ContactSection() {
                       return (
                         <div
                           key="organization-position-row"
-                          className="grid grid-cols-2 gap-4 sm:gap-5"
+                          className="grid grid-cols-2 gap-3 sm:gap-5"
                         >
                           {renderSingleField(field)}
                           {renderSingleField(nextField)}
