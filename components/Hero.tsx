@@ -19,7 +19,8 @@ export default function Hero() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4 lg:justify-start">
             <a
-              href="mailto:jerry.wagner@culturesinaction.com"
+              href="#contact"
+              data-inquiry-context="book_demo"
               className="min-h-11 cursor-pointer rounded-full bg-gold px-8 py-3 text-center font-body text-sm font-medium tracking-wide text-crimson transition-colors duration-200 hover:bg-yellow-500 sm:min-w-[11rem]"
             >
               Request a Demo

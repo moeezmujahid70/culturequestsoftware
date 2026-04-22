@@ -14,7 +14,8 @@ export default function PartnersSection() {
           engagements.
         </p>
         <a
-          href="mailto:jerry.wagner@culturesinaction.com"
+          href="#contact"
+          data-inquiry-context="partners"
           className="link-underline mt-8 inline-block cursor-pointer font-body text-base font-medium text-gold transition-colors duration-200 hover:text-yellow-300"
         >
           Get in touch to learn more

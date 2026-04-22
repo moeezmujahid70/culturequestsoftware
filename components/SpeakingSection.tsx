@@ -33,7 +33,8 @@ export default function SpeakingSection() {
             </div>
 
             <a
-              href="mailto:jerry.wagner@culturesinaction.com?subject=Speaking%20Engagement%20Inquiry"
+              href="#contact"
+              data-inquiry-context="speaking"
               className="mt-8 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-full border-2 border-crimson px-6 py-3 font-body text-sm font-semibold uppercase tracking-[0.16em] text-crimson transition-colors duration-200 hover:bg-crimson hover:text-white sm:w-auto"
             >
               Ask About Speaking

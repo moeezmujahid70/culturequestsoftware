@@ -3,7 +3,8 @@ const cards = [
     title: "Request a Demo",
     body: "Join a Zoom demo to see the system\u2019s capabilities firsthand.",
     action: "Book a Demo",
-    href: "mailto:jerry.wagner@culturesinaction.com",
+    href: "#contact",
+    inquiryContext: "book_demo",
     external: false,
   },
   {
@@ -17,7 +18,8 @@ const cards = [
     title: "Free Pilot",
     body: "Do a free pilot with your actual team for 3 months. We’ll do it together.",
     action: "Start Free Pilot",
-    href: "mailto:jerry.wagner@culturesinaction.com",
+    href: "#contact",
+    inquiryContext: "free_pilot",
     external: false,
   },
 ];
@@ -47,6 +49,9 @@ export default function CtaSection() {
               </p>
               <a
                 href={card.href}
+                {...(card.inquiryContext
+                  ? { "data-inquiry-context": card.inquiryContext }
+                  : {})}
                 {...(card.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}

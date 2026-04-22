@@ -53,13 +53,15 @@ export default function InnerCircleSection() {
             </a>
             <a
               href="#contact"
+              data-inquiry-context="inner_circle"
               className="link-underline cursor-pointer font-body text-sm font-medium text-crimson transition-colors duration-200 hover:text-gold"
             >
               Go to contact
             </a>
           </div>
           <a
-            href="mailto:jerry.wagner@culturesinaction.com?subject=Inner%20Circle%20Invitation%20Request"
+            href="#contact"
+            data-inquiry-context="inner_circle"
             className="mt-7 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-full bg-crimson px-6 py-3 font-body text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:bg-crimson/90 sm:mt-8 sm:w-auto sm:px-7 sm:text-sm sm:tracking-[0.16em]"
           >
             Introduce Yourself

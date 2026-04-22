@@ -113,7 +113,8 @@ export default function PricingSection() {
               </p>
               <div className="mt-auto pt-6">
                 <a
-                  href="mailto:jerry.wagner@culturesinaction.com"
+                  href="#contact"
+                  data-inquiry-context="pricing"
                   className="block min-h-11 cursor-pointer rounded-full border-2 border-crimson px-5 py-2.5 text-center font-body text-sm font-semibold tracking-wide text-crimson transition-colors duration-200 hover:bg-crimson hover:text-white"
                 >
                   Get Started
@@ -145,7 +146,8 @@ export default function PricingSection() {
           Pricing is based on total organization size, not number of teams or
           users.{" "}
           <a
-            href="mailto:jerry.wagner@culturesinaction.com"
+            href="#contact"
+            data-inquiry-context="pricing"
             className="cursor-pointer text-crimson underline underline-offset-2 transition-colors duration-200 hover:text-gold"
           >
             Questions? Let&apos;s talk.

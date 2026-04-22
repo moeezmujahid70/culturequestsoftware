@@ -75,7 +75,8 @@ export default function Navbar() {
             </div>
           </div>
           <a
-            href="mailto:jerry.wagner@culturesinaction.com"
+            href="#contact"
+            data-inquiry-context="book_demo"
             className="ml-2 flex-shrink-0 cursor-pointer rounded-full bg-gold px-3.5 py-2 font-body text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-crimson transition-colors duration-200 hover:bg-yellow-400 xl:px-4 xl:text-[0.76rem]"
           >
             DEMO
@@ -127,7 +128,8 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="mailto:jerry.wagner@culturesinaction.com"
+            href="#contact"
+            data-inquiry-context="book_demo"
             className="mt-3 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-full bg-gold px-5 py-2.5 font-body text-sm font-semibold uppercase tracking-[0.12em] text-crimson"
           >
             DEMO

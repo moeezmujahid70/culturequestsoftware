@@ -64,7 +64,8 @@ export default function UniversitySupportSection() {
             </div>
 
             <a
-              href="mailto:jerry.wagner@culturesinaction.com?subject=University%20Support%20Program%20Inquiry"
+              href="#contact"
+              data-inquiry-context="universities"
               className="mt-6 inline-flex min-h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-full border-2 border-crimson px-5 py-3 text-center font-body text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-crimson transition-colors duration-200 hover:bg-crimson hover:text-white sm:mt-8 sm:w-auto sm:px-6 sm:text-sm sm:tracking-[0.16em]"
             >
               Discuss a Partnership
