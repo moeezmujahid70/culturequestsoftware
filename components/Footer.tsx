@@ -1,3 +1,5 @@
+const contactEmail = "jerry.wagner@culturequestsoftware.net";
+
 export default function Footer() {
   return (
     <footer className="bg-crimson px-4 py-12 sm:px-6 sm:py-16">
@@ -43,10 +45,10 @@ export default function Footer() {
               </p>
             </div>
             <a
-              href="mailto:jerry.wagner@culturesinaction.com"
+              href={`mailto:${contactEmail}`}
               className="mt-4 inline-block break-all cursor-pointer font-body text-sm font-medium text-gold transition-colors duration-200 hover:text-yellow-400"
             >
-              jerry.wagner@culturesinaction.com
+              {contactEmail}
             </a>
           </div>
         </div>

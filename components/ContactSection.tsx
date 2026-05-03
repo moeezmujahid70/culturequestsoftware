@@ -248,14 +248,14 @@ const topicConfigs: Record<
 
 const topicOptions: Array<{ value: TopicValue; label: string }> = [
   { value: "general", label: "General Inquiry" },
-  { value: "book_demo", label: "Book a Demo" },
-  { value: "free_pilot", label: "Free Pilot" },
-  { value: "pricing", label: "Pricing" },
-  { value: "universities", label: "University Support Program" },
-  { value: "inner_circle", label: "Inner Circle" },
-  { value: "partners", label: "Partners" },
-  { value: "speaking", label: "Speaking" },
-  { value: "kickoff", label: "Design Kickoff" },
+  { value: "book_demo", label: "Only Book a Demo" },
+  { value: "free_pilot", label: "Only Free Pilot" },
+  { value: "pricing", label: "Only Pricing" },
+  { value: "universities", label: "Only University Support Program" },
+  { value: "inner_circle", label: "Only Inner Circle" },
+  { value: "partners", label: "Only Partners" },
+  { value: "speaking", label: "Only Speaking" },
+  { value: "kickoff", label: "Only Design Kickoff" },
 ];
 
 const defaultFormData = {
@@ -447,12 +447,11 @@ export default function ContactSection() {
               Contact
             </p>
             <h2 className="mt-3 font-display text-[2rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-5xl">
-              Let&apos;s Start a Conversation
+              Contact
             </h2>
             <p className="mt-6 font-body text-[15px] leading-relaxed text-charcoal sm:text-base">
-              Whether you&apos;re exploring Culture Quest for your team,
-              interested in a free pilot, or want to learn more about the
-              partnership program, we&apos;d love to hear from you.
+              Let us know about your interest and we&apos;ll get back to you
+              soon. Thanks a lot.
             </p>
 
             {/* Contact details */}
@@ -596,16 +595,22 @@ export default function ContactSection() {
                 </p>
 
                 <div>
-                    <label
-                      htmlFor="topic"
-                      className="mb-1.5 block font-body text-[0.92rem] font-medium text-charcoal sm:text-sm"
-                    >
+                  <label
+                    htmlFor="topic"
+                    className="mb-1.5 block font-body text-[0.92rem] font-medium text-charcoal sm:text-sm"
+                  >
                     Topic
                     <span className="ml-1 text-gold" aria-hidden="true">
                       *
                     </span>
                   </label>
-                  <div className="relative">
+                  <div
+                    className={`relative rounded-xl border bg-white shadow-sm transition-colors duration-200 focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/50 ${
+                      errors.topic && touched.topic
+                        ? "border-red-400 focus-within:ring-red-200"
+                        : "border-mist"
+                    }`}
+                  >
                     <select
                       id="topic"
                       value={formData.topic}
@@ -613,9 +618,7 @@ export default function ContactSection() {
                       onBlur={handleBlur}
                       aria-required="true"
                       aria-describedby={errors.topic ? "topic-error" : undefined}
-                      className={`${inputBase} cursor-pointer appearance-none pr-11 ${
-                        errors.topic && touched.topic ? inputError : inputNormal
-                      }`}
+                      className="w-full cursor-pointer appearance-none rounded-xl border-0 bg-transparent px-4 py-3.5 pr-11 font-body text-sm font-medium text-charcoal outline-none"
                     >
                       <option value="">Select a topic</option>
                       {topicOptions.map((option) => (
@@ -639,6 +642,9 @@ export default function ContactSection() {
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </div>
+                  <p className="mt-2 font-body text-xs leading-relaxed text-charcoal/50">
+                    You can keep this preselected topic or choose another one.
+                  </p>
                   {errors.topic && touched.topic && (
                     <p
                       id="topic-error"
