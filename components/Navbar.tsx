@@ -1,14 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const navLinks = [
+const primaryNavLinks = [
   { label: "Concept", href: "#concept" },
   { label: "Pillars", href: "#pillars" },
   { label: "Design", href: "#design" },
   { label: "Kickoff", href: "#kickoff" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Example", href: "#example" },
+];
+
+const moreNavLinks = [
   { label: "Universities", href: "#universities" },
   { label: "Inner Circle", href: "#inner-circle" },
   { label: "Partners", href: "#partners" },
@@ -16,9 +20,31 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
+const mobileNavLinks = [
+  ...primaryNavLinks,
+  { label: "Get Started", href: "#get-started" },
+  ...moreNavLinks,
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMoreMenu = () => {
+    if (moreCloseTimer.current) {
+      clearTimeout(moreCloseTimer.current);
+    }
+    setMoreOpen(true);
+  };
+
+  const closeMoreMenu = () => {
+    if (moreCloseTimer.current) {
+      clearTimeout(moreCloseTimer.current);
+    }
+    moreCloseTimer.current = setTimeout(() => setMoreOpen(false), 180);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -60,26 +86,89 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav links */}
-        <div className="hidden min-w-0 flex-1 items-center pl-3 lg:flex xl:pl-4">
-          <div className="no-scrollbar flex min-w-0 flex-1 items-center overflow-x-auto">
-            <div className="flex min-w-max items-center gap-0.5 pr-2 xl:gap-1 xl:pr-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="cursor-pointer whitespace-nowrap rounded-full px-2 py-1.5 font-body text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#F8E8BE] transition-colors duration-200 hover:bg-white/10 hover:text-white xl:px-2.5 xl:text-[0.76rem]"
+        <div className="hidden min-w-0 flex-1 items-center justify-end gap-1 pl-3 lg:flex xl:gap-1.5 xl:pl-4">
+          <div className="flex min-w-0 items-center justify-end gap-0.5 xl:gap-1">
+            {primaryNavLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="cursor-pointer whitespace-nowrap rounded-full px-2 py-1.5 font-body text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#F8E8BE] transition-colors duration-200 hover:bg-white/10 hover:text-white xl:px-2.5 xl:text-[0.76rem]"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <div
+              className="relative"
+              onMouseEnter={openMoreMenu}
+              onMouseLeave={closeMoreMenu}
+              onBlur={(event) => {
+                if (
+                  !event.currentTarget.contains(
+                    event.relatedTarget as Node | null,
+                  )
+                ) {
+                  closeMoreMenu();
+                }
+              }}
+            >
+              <button
+                type="button"
+                className="inline-flex cursor-pointer items-center gap-1 whitespace-nowrap rounded-full px-2 py-1.5 font-body text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-[#F8E8BE] transition-colors duration-200 hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white focus:outline-none xl:px-2.5 xl:text-[0.76rem]"
+                aria-haspopup="true"
+                aria-expanded={moreOpen}
+                onClick={openMoreMenu}
+                onFocus={openMoreMenu}
+              >
+                More
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  className={`transition-transform duration-200 ${
+                    moreOpen ? "rotate-180" : ""
+                  }`}
                 >
-                  {link.label}
-                </a>
-              ))}
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+
+              <div
+                onMouseEnter={openMoreMenu}
+                onMouseLeave={closeMoreMenu}
+                className={`absolute right-0 top-full z-50 w-52 pt-2 transition-all duration-200 ${
+                  moreOpen
+                    ? "visible translate-y-0 opacity-100"
+                    : "invisible pointer-events-none -translate-y-1 opacity-0"
+                }`}
+              >
+                <div className="rounded-2xl border border-white/12 bg-crimson p-2 shadow-[0_20px_45px_rgba(0,0,0,0.24)]">
+                  {moreNavLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={() => setMoreOpen(false)}
+                      className="block cursor-pointer rounded-xl px-3 py-2.5 font-body text-[0.76rem] font-semibold uppercase tracking-[0.11em] text-[#F8E8BE] transition-colors duration-200 hover:bg-white/10 hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
+
           <a
-            href="#contact"
-            data-inquiry-context="book_demo"
-            className="ml-2 flex-shrink-0 cursor-pointer rounded-full bg-gold px-3.5 py-2 font-body text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-crimson transition-colors duration-200 hover:bg-yellow-400 xl:px-4 xl:text-[0.76rem]"
+            href="#get-started"
+            className="ml-1 flex-shrink-0 cursor-pointer rounded-full bg-gold px-3.5 py-2 font-body text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-crimson transition-colors duration-200 hover:bg-yellow-400 xl:px-4 xl:text-[0.76rem]"
           >
-            DEMO
+            Get Started
           </a>
         </div>
 
@@ -117,7 +206,7 @@ export default function Navbar() {
       {/* Mobile dropdown */}
       {menuOpen && (
         <div className="border-t border-white/10 bg-crimson px-4 pb-5 pt-2 lg:hidden">
-          {navLinks.map((link) => (
+          {mobileNavLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -127,13 +216,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            data-inquiry-context="book_demo"
-            className="mt-3 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-full bg-gold px-5 py-2.5 font-body text-sm font-semibold uppercase tracking-[0.12em] text-crimson"
-          >
-            DEMO
-          </a>
         </div>
       )}
     </nav>

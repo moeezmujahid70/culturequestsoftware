@@ -26,7 +26,7 @@ const cards = [
 
 export default function CtaSection() {
   return (
-    <section className="bg-gold px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
+    <section id="get-started" className="bg-gold px-4 py-14 sm:px-6 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl">
         <p className="mx-auto max-w-4xl text-center font-display text-[1.9rem] font-semibold leading-tight text-crimson sm:text-3xl lg:text-4xl">
           Stop settling for the culture you inherited. Design the one you want.

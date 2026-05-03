@@ -267,6 +267,8 @@ const defaultFormData = {
   message: "",
 };
 
+const contactEmail = "jerry.wagner@culturequestsoftware.net";
+
 type FormData = Record<string, string>;
 type Errors = Record<string, string>;
 
@@ -299,6 +301,8 @@ export default function ContactSection() {
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const activeConfig =
     selectedTopic === ""
       ? topicConfigs.default
@@ -309,6 +313,8 @@ export default function ContactSection() {
     function resetForContext(nextTopic: TopicValue) {
       setSelectedTopic(nextTopic);
       setSubmitted(false);
+      setIsSubmitting(false);
+      setSubmitError("");
       setErrors({});
       setTouched({});
       setFormData({ ...defaultFormData, topic: nextTopic });
@@ -345,6 +351,7 @@ export default function ContactSection() {
       const next = { ...formData, topic: nextTopic };
       setFormData(next);
       setSubmitted(false);
+      setSubmitError("");
       if (touched[id]) {
         const nextConfig =
           nextTopic === ""
@@ -357,6 +364,7 @@ export default function ContactSection() {
 
     const next = { ...formData, [id]: value };
     setFormData(next);
+    setSubmitError("");
     if (touched[id]) {
       setErrors(validate(next, activeFields));
     }
@@ -370,41 +378,57 @@ export default function ContactSection() {
     setErrors(validate(formData, activeFields));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const allTouched: Record<string, boolean> = { topic: true };
     activeFields.forEach((f) => (allTouched[f.id] = true));
     setTouched(allTouched);
+    setSubmitError("");
     const errs = validate(formData, activeFields);
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
 
     const inquiryLabel = activeConfig.inquiryLabel;
     const renderedFieldIds = new Set(activeFields.map((field) => field.id));
-    const subject = encodeURIComponent(
-      `${inquiryLabel} Inquiry from ${formData.name}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Inquiry Type: ${inquiryLabel}`,
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        renderedFieldIds.has("organization") && formData.organization
-          ? `Organization: ${formData.organization}`
-          : "",
-        renderedFieldIds.has("position") && formData.position
-          ? `Position: ${formData.position}`
-          : "",
-        renderedFieldIds.has("message") && formData.message
-          ? `${activeFields.find((field) => field.id === "message")?.label}: ${formData.message}`
-          : "",
-      ]
-        .filter(Boolean)
-        .join("\n")
-    );
+    const form = e.currentTarget;
+    const honeypot = new FormData(form).get("website");
 
-    window.location.href = `mailto:jerry.wagner@culturesinaction.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/send-mail.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          inquiryLabel,
+          website: honeypot,
+          visibleFields: Array.from(renderedFieldIds),
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as
+        | { ok?: boolean; message?: string }
+        | null;
+
+      if (!response.ok || !result?.ok) {
+        throw new Error(result?.message || "Unable to send your message.");
+      }
+
+      setSubmitted(true);
+      setFormData({ ...defaultFormData, topic: selectedTopic });
+      setTouched({});
+      setErrors({});
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your message right now."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   const inputBase =
@@ -456,10 +480,10 @@ export default function ContactSection() {
                     Email
                   </p>
                   <a
-                    href="mailto:jerry.wagner@culturesinaction.com"
+                    href={`mailto:${contactEmail}`}
                     className="cursor-pointer break-words font-body text-[0.98rem] leading-relaxed text-crimson transition-colors duration-200 hover:text-gold sm:text-sm"
                   >
-                    jerry.wagner@culturesinaction.com
+                    {contactEmail}
                   </a>
                 </div>
               </div>
@@ -528,16 +552,16 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <h3 className="mt-5 font-display text-2xl font-semibold text-crimson">
-                  Message Ready
+                  Message Sent
                 </h3>
                 <p className="mt-3 font-body text-sm leading-relaxed text-charcoal/70">
-                  Your email client should have opened with your message
-                  pre-filled. If it didn&apos;t, email Jerry directly at{" "}
+                  Thanks for reaching out. We received your message and will be
+                  in touch soon. You can also email Jerry directly at{" "}
                   <a
-                    href="mailto:jerry.wagner@culturesinaction.com"
+                    href={`mailto:${contactEmail}`}
                     className="cursor-pointer text-crimson underline underline-offset-2 hover:text-gold"
                   >
-                    jerry.wagner@culturesinaction.com
+                    {contactEmail}
                   </a>
                   .
                 </p>
@@ -547,6 +571,7 @@ export default function ContactSection() {
                     setFormData({ ...defaultFormData, topic: selectedTopic });
                     setTouched({});
                     setErrors({});
+                    setSubmitError("");
                   }}
                   className="mt-8 cursor-pointer rounded-full border border-crimson px-6 py-2.5 font-body text-sm font-medium text-crimson transition-colors duration-200 hover:bg-crimson hover:text-white"
                 >
@@ -555,6 +580,14 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-4 sm:space-y-5">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <h3 className="font-display text-[1.15rem] font-semibold text-crimson sm:text-xl">
                   {activeConfig.title}
                 </h3>
@@ -713,14 +746,32 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  className="mt-2 w-full cursor-pointer rounded-full bg-crimson px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-crimson/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  disabled={isSubmitting}
+                  className="mt-2 w-full cursor-pointer rounded-full bg-crimson px-6 py-3 font-body text-sm font-medium tracking-wide text-white transition-colors duration-200 hover:bg-crimson/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold disabled:cursor-not-allowed disabled:bg-crimson/60"
                 >
-                  {activeConfig.submitLabel}
+                  {isSubmitting ? "Sending..." : activeConfig.submitLabel}
                 </button>
 
-                <p className="text-center font-body text-xs text-charcoal/40">
-                  Your message will open in your default email client.
-                </p>
+                {submitError ? (
+                  <p
+                    role="alert"
+                    className="text-center font-body text-xs text-red-600"
+                  >
+                    {submitError} If the issue continues, email Jerry directly
+                    at{" "}
+                    <a
+                      href={`mailto:${contactEmail}`}
+                      className="text-crimson underline underline-offset-2 hover:text-gold"
+                    >
+                      {contactEmail}
+                    </a>
+                    .
+                  </p>
+                ) : (
+                  <p className="text-center font-body text-xs text-charcoal/40">
+                    Your message will be sent securely through the website.
+                  </p>
+                )}
               </form>
             )}
           </div>
