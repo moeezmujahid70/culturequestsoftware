@@ -248,14 +248,14 @@ const topicConfigs: Record<
 
 const topicOptions: Array<{ value: TopicValue; label: string }> = [
   { value: "general", label: "General Inquiry" },
-  { value: "book_demo", label: "Only Book a Demo" },
-  { value: "free_pilot", label: "Only Free Pilot" },
-  { value: "pricing", label: "Only Pricing" },
-  { value: "universities", label: "Only University Support Program" },
-  { value: "inner_circle", label: "Only Inner Circle" },
-  { value: "partners", label: "Only Partners" },
-  { value: "speaking", label: "Only Speaking" },
-  { value: "kickoff", label: "Only Design Kickoff" },
+  { value: "book_demo", label: "Book a Demo" },
+  { value: "free_pilot", label: "Free Pilot" },
+  { value: "pricing", label: "Pricing" },
+  { value: "universities", label: "University Support Program" },
+  { value: "inner_circle", label: "Inner Circle" },
+  { value: "partners", label: "Partners" },
+  { value: "speaking", label: "Speaking" },
+  { value: "kickoff", label: "Design Kickoff" },
 ];
 
 const defaultFormData = {
@@ -297,6 +297,7 @@ function validate(data: FormData, fields: Field[]): Errors {
 
 export default function ContactSection() {
   const [selectedTopic, setSelectedTopic] = useState<TopicValue>("");
+  const [lockedTopic, setLockedTopic] = useState<TopicValue | null>(null);
   const [formData, setFormData] = useState<FormData>(defaultFormData);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
@@ -308,10 +309,14 @@ export default function ContactSection() {
       ? topicConfigs.default
       : topicConfigs[selectedTopic as Exclude<TopicValue, "">];
   const activeFields = activeConfig.fields;
+  const availableTopicOptions = lockedTopic
+    ? topicOptions.filter((option) => option.value === lockedTopic)
+    : topicOptions;
 
   useEffect(() => {
-    function resetForContext(nextTopic: TopicValue) {
+    function resetForContext(nextTopic: TopicValue, lockTopic: boolean) {
       setSelectedTopic(nextTopic);
+      setLockedTopic(lockTopic && nextTopic !== "" ? nextTopic : null);
       setSubmitted(false);
       setIsSubmitting(false);
       setSubmitError("");
@@ -326,14 +331,14 @@ export default function ContactSection() {
       if (trigger) {
         const nextTopic = trigger.dataset.inquiryContext as TopicValue;
         if (nextTopic === "" || nextTopic in topicConfigs) {
-          resetForContext(nextTopic);
+          resetForContext(nextTopic, true);
           return;
         }
       }
 
       const contactLink = target?.closest<HTMLAnchorElement>('a[href="#contact"]');
       if (contactLink && !contactLink.dataset.inquiryContext) {
-        resetForContext("");
+        resetForContext("", false);
       }
     }
 
@@ -608,7 +613,9 @@ export default function ContactSection() {
                     className={`relative rounded-xl border bg-white shadow-sm transition-colors duration-200 focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/50 ${
                       errors.topic && touched.topic
                         ? "border-red-400 focus-within:ring-red-200"
-                        : "border-mist"
+                        : lockedTopic
+                          ? "border-mist bg-parchment/45"
+                          : "border-mist"
                     }`}
                   >
                     <select
@@ -616,34 +623,43 @@ export default function ContactSection() {
                       value={formData.topic}
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      disabled={!!lockedTopic}
                       aria-required="true"
                       aria-describedby={errors.topic ? "topic-error" : undefined}
-                      className="w-full cursor-pointer appearance-none rounded-xl border-0 bg-transparent px-4 py-3.5 pr-11 font-body text-sm font-medium text-charcoal outline-none"
+                      className={`w-full appearance-none rounded-xl border-0 bg-transparent px-4 py-3.5 font-body text-sm font-medium outline-none disabled:opacity-100 ${
+                        lockedTopic
+                          ? "cursor-not-allowed pr-4 text-charcoal/80"
+                          : "cursor-pointer pr-11 text-charcoal"
+                      }`}
                     >
-                      <option value="">Select a topic</option>
-                      {topicOptions.map((option) => (
+                      {!lockedTopic && <option value="">Select a topic</option>}
+                      {availableTopicOptions.map((option) => (
                         <option key={option.value} value={option.value}>
                           {option.label}
                         </option>
                       ))}
                     </select>
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-charcoal/50"
-                      aria-hidden="true"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
+                    {!lockedTopic && (
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-charcoal/50"
+                        aria-hidden="true"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    )}
                   </div>
                   <p className="mt-2 font-body text-xs leading-relaxed text-charcoal/50">
-                    You can keep this preselected topic or choose another one.
+                    {lockedTopic
+                      ? "This topic is locked for the section you selected."
+                      : "Use this to route your message to the right conversation."}
                   </p>
                   {errors.topic && touched.topic && (
                     <p
