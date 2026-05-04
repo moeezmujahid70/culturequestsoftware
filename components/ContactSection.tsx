@@ -312,6 +312,9 @@ export default function ContactSection() {
   const availableTopicOptions = lockedTopic
     ? topicOptions.filter((option) => option.value === lockedTopic)
     : topicOptions;
+  const activeTopicLabel =
+    topicOptions.find((option) => option.value === formData.topic)?.label ||
+    activeConfig.inquiryLabel;
 
   useEffect(() => {
     function resetForContext(nextTopic: TopicValue, lockTopic: boolean) {
@@ -605,41 +608,45 @@ export default function ContactSection() {
                     className="mb-1.5 block font-body text-[0.92rem] font-medium text-charcoal sm:text-sm"
                   >
                     Topic
-                    <span className="ml-1 text-gold" aria-hidden="true">
-                      *
-                    </span>
+                    {!lockedTopic && (
+                      <span className="ml-1 text-gold" aria-hidden="true">
+                        *
+                      </span>
+                    )}
                   </label>
-                  <div
-                    className={`relative rounded-xl border bg-white shadow-sm transition-colors duration-200 focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/50 ${
-                      errors.topic && touched.topic
-                        ? "border-red-400 focus-within:ring-red-200"
-                        : lockedTopic
-                          ? "border-mist bg-parchment/45"
-                          : "border-mist"
-                    }`}
-                  >
-                    <select
+                  {lockedTopic ? (
+                    <div
                       id="topic"
-                      value={formData.topic}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      disabled={!!lockedTopic}
-                      aria-required="true"
-                      aria-describedby={errors.topic ? "topic-error" : undefined}
-                      className={`w-full appearance-none rounded-xl border-0 bg-transparent px-4 py-3.5 font-body text-sm font-medium outline-none disabled:opacity-100 ${
-                        lockedTopic
-                          ? "cursor-not-allowed pr-4 text-charcoal/80"
-                          : "cursor-pointer pr-11 text-charcoal"
+                      className="rounded-xl border border-mist bg-parchment/45 px-4 py-3.5 font-body text-sm font-medium text-charcoal/80 shadow-sm"
+                    >
+                      {activeTopicLabel}
+                    </div>
+                  ) : (
+                    <div
+                      className={`relative rounded-xl border bg-white shadow-sm transition-colors duration-200 focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/50 ${
+                        errors.topic && touched.topic
+                          ? "border-red-400 focus-within:ring-red-200"
+                          : "border-mist"
                       }`}
                     >
-                      {!lockedTopic && <option value="">Select a topic</option>}
-                      {availableTopicOptions.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                    {!lockedTopic && (
+                      <select
+                        id="topic"
+                        value={formData.topic}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        aria-required="true"
+                        aria-describedby={
+                          errors.topic ? "topic-error" : undefined
+                        }
+                        className="w-full cursor-pointer appearance-none rounded-xl border-0 bg-transparent px-4 py-3.5 pr-11 font-body text-sm font-medium text-charcoal outline-none"
+                      >
+                        <option value="">Select a topic</option>
+                        {availableTopicOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
                       <svg
                         width="18"
                         height="18"
@@ -654,11 +661,11 @@ export default function ContactSection() {
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
-                    )}
-                  </div>
+                    </div>
+                  )}
                   <p className="mt-2 font-body text-xs leading-relaxed text-charcoal/50">
                     {lockedTopic
-                      ? "This topic is locked for the section you selected."
+                      ? "This form is for this topic only."
                       : "Use this to route your message to the right conversation."}
                   </p>
                   {errors.topic && touched.topic && (
